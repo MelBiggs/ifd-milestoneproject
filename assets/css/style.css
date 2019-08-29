@@ -1,0 +1,13 @@
+.navbar-brand {
+    font-size: 24px!important;
+}
+
+.cards {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-header {
+    font-size: 20px;
+    text-align: center;
+}

@@ -21,13 +21,14 @@ function showEnergy(ndx) {
 
     console.log(group);
 
-    chart.width(400)
+    chart
+        .width(400)
         .height(300)
         // .y(d3.scale.linear().domain([0,1]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
-        .yAxisLabel("Frequency")
-        .xAxisLabel("energy")
+        .yAxisLabel("Song Count")
+        .xAxisLabel("Energy")
         .dimension(dim)
         .group(group)
         .on('renderlet', function(chart) {
@@ -51,7 +52,6 @@ function showDanceability(ndx) {
 
     chart.width(400)
         .height(300)
-        // .y(d3.scale.linear().domain([0,1]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
         .yAxisLabel("Frequency")

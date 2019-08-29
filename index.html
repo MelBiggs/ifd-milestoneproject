@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="assets/css/libraries/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/libraries/bootstrap.min.css" type="text/css" />
 
     <script src="assets/js/libraries/d3.min.js"></script>
     <script src="assets/js/libraries/crossfilter.min.js"></script>
@@ -21,12 +22,52 @@
 
 <body>
 
-    <h1>Energy</h1>
-    <div id="energy"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Top Spotify Tracks of 2018</a>
+    </nav>
 
-    <h1>Danceability</h1>
-    <div id="danceability"></div>
+    <section class="cards">
+        <div class="container-fluid">
+            <div class="row">
+                <!--- Total songs card --->
+                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
+                    <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
+                        <div class="card-header">Total Songs</div>
+                        <div class="card-body">
+                            <div id="totalSongsCard"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!--- Total artists card --->
+                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-header">Total Artists</div>
+                        <div class="card-body">
+                            <div id="totalArtistsCard"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
+                    <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
+                        <div class="card-header">Average Song Length</div>
+                        <div class="card-body">
+                            <div id="totalArtistsCard"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Energy</h1>
+        <div id="energy"></div>
+
+        <h1>Danceability</h1>
+        <div id="danceability"></div>
+
+    </section>
 
     <!--<script src="assets/js/libraries/jquery-3.4.1.js"></script>-->
 
