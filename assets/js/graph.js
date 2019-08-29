@@ -24,6 +24,6 @@ function show_danceability(ndx) {
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .elasticY(true)
-        .xAxisLabel("danceability")
-        .yAxis().ticks(20);
+        .xAxisLabel("Danceability")
+        .yAxis().ticks(5);
 }
