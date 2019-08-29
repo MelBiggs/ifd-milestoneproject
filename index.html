@@ -16,6 +16,7 @@
     <script src="assets/js/libraries/dc.min.js"></script>
     <script src="assets/js/libraries/queue.min.js"></script>
     <script src="assets/js/graph.js"></script>
+    <script src="assets/js/libraries/jquery-3.4.1.js"></script>
 
 
 </head>
@@ -44,15 +45,17 @@
                     <div class="card border-secondary mb-3">
                         <div class="card-header">Total Artists</div>
                         <div class="card-body">
-                            <div id="totalArtistsCard"></div>
+                            <div id="unique-artists"></div>
                         </div>
                     </div>
                 </div>
+
+                <!--- Average Song Length card --->
                 <div class="col-lg-4 col-md-4 col-sm-12 px-2">
                     <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
                         <div class="card-header">Average Song Length</div>
                         <div class="card-body">
-                            <div id="totalArtistsCard"></div>
+                            <div id="AverageLengthCard"></div>
                         </div>
                     </div>
                 </div>
@@ -61,15 +64,16 @@
     </section>
 
     <section>
-        <h1>Energy</h1>
-        <div id="energy"></div>
+        <div class="container">
+            <div class="row">
+                <h4>Energy</h4>
+                <div class="col-md" id="energy"></div>
 
-        <h1>Danceability</h1>
-        <div id="danceability"></div>
+                <h4>Danceability</h4>
+                <div class="col-md" id="danceability"></div>
 
     </section>
 
-    <!--<script src="assets/js/libraries/jquery-3.4.1.js"></script>-->
 
 
 </body>

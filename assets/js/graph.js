@@ -5,9 +5,9 @@ queue()
 function makeGraphs(error, spotifyData) {
     var ndx = crossfilter(spotifyData);
 
+
     showEnergy(ndx);
     showDanceability(ndx);
-
 
 }
 
