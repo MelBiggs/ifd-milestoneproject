@@ -8,6 +8,7 @@ function makeGraphs(error, spotifyData) {
 
     showEnergy(ndx);
     showDanceability(ndx);
+    showKey(ndx);
 
 }
 
@@ -65,6 +66,79 @@ function showDanceability(ndx) {
         });
 
     chart.render();
+}
+
+function showKey(ndx) {
+    var chart = dc.pieChart("#key");
+
+    // Transform the numbers into musical keys in letters
+    var keyDimension = ndx.dimension(function(data) {
+        return transformKey(parseInt(data.key));
+    });
+
+    var group = keyDimension.group();
+
+    // Create the chart
+    chart
+        .width(600)
+        .height(400)
+        .innerRadius(100)
+        .dimension(keyDimension)
+        .group(group)
+        .legend(dc.legend())
+        .on('pretransition', function(chart) {
+            chart.selectAll('text.pie-slice').text(function(d) {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+            });
+        });
+
+    chart.render();
+}
+
+// function to transfor the number scale for music key to letters
+function transformKey(key) {
+    var keyString;
+
+    switch (key) {
+        case 0:
+            keyString = "C";
+            break;
+        case 1:
+            keyString = "C♯/D♭";
+            break;
+        case 2:
+            keyString = "D";
+            break;
+        case 3:
+            keyString = "D♯/E♭";
+            break;
+        case 4:
+            keyString = "E";
+            break;
+        case 5:
+            keyString = "F";
+            break;
+        case 6:
+            keyString = "F♯/G♭";
+            break;
+        case 7:
+            keyString = "G";
+            break;
+        case 8:
+            keyString = "G♯/A♭";
+            break;
+        case 9:
+            keyString = "A";
+            break;
+        case 10:
+            keyString = "A♯/B♭";
+            break;
+        case 11:
+            keyString = "B";
+            break;
+    }
+
+    return keyString;
 }
 
 
