@@ -5,12 +5,41 @@ queue()
 function makeGraphs(error, spotifyData) {
     var ndx = crossfilter(spotifyData);
 
-
+    totalSongs(ndx);
+    totalArtists(ndx);
+    // averageSongLength(ndx);
     showEnergy(ndx);
     showDanceability(ndx);
     showKey(ndx);
 
 }
+
+function totalSongs(ndx) {
+    // Select the artists
+    var dim = ndx.dimension(dc.pluck("name"));
+    // Count them
+    var individualSongs = dim.group().all().length;
+    // Use jQuery to display the value on the page
+    $("#individual-songs").text(individualSongs);
+}
+
+function totalArtists(ndx) {
+    // Select the artists
+    var dim = ndx.dimension(dc.pluck("artists"));
+    // Count them
+    var uniqueArtists = dim.group().all().length;
+    // Use jQuery to display the value on the page
+    $("#unique-artists").text(uniqueArtists);
+}
+
+// function averageSongLength(ndx) {
+    //     var dim = ndx.dimension(dc.pluck("name"));
+    //     // Count them
+    //     var AverageSongLength = dim.group().all().length;
+    //     return parseFloat(data.name).toFixed(1);
+    //     let avg = AverageSongLength / values.length;
+    //     return avg;
+    // });
 
 function showEnergy(ndx) {
     var chart = dc.lineChart("#energy");
