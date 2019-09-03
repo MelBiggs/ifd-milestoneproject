@@ -7,9 +7,10 @@ function makeGraphs(error, spotifyData) {
 
     totalSongs(ndx);
     totalArtists(ndx);
-    // averageSongLength(ndx);
+    //averageSongLength(ndx);
     showEnergy(ndx);
     showDanceability(ndx);
+    //show_energy_to_danceability_correlation(ndx);
     showKey(ndx);
 
 }
@@ -33,13 +34,32 @@ function totalArtists(ndx) {
 }
 
 // function averageSongLength(ndx) {
-    //     var dim = ndx.dimension(dc.pluck("name"));
-    //     // Count them
-    //     var AverageSongLength = dim.group().all().length;
-    //     return parseFloat(data.name).toFixed(1);
-    //     let avg = AverageSongLength / values.length;
-    //     return avg;
-    // });
+//     var dim = ndx.dimension(dc.pluck("name"));
+//     // Count them
+//     var AverageSongLength = dim.group().all().length;
+//     return parseFloat(data.name).toFixed(1);
+//     let avg = AverageSongLength / values.length;
+//     return avg;
+// });
+
+// function averageSongLength(ndx) {
+//     var dim = ndx.dimension(dc.pluck("duration_ms"));
+//     // Count them
+//     var AverageSongLength = dim.group().all().length;
+//     var avg = AverageSongLength / values.length;
+//     return millisToMinutesAndSeconds(parseInt(data.duration_ms));
+//     $("#individual-songs").text(individualSongs);
+// });
+
+
+// function millisToMinutesAndSeconds(millis) {
+//     var minutes = Math.floor(millis / 60000);
+//     var seconds = ((millis % 60000) / 1000).toFixed(0);
+//     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+// }
+
+
+//Line Chart - Energy
 
 function showEnergy(ndx) {
     var chart = dc.lineChart("#energy");
@@ -52,7 +72,7 @@ function showEnergy(ndx) {
     console.log(group);
 
     chart
-        .width(400)
+        .width(200)
         .height(300)
         // .y(d3.scale.linear().domain([0,1]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
@@ -69,6 +89,8 @@ function showEnergy(ndx) {
     chart.render();
 }
 
+// Line Chart - Danceability
+
 function showDanceability(ndx) {
     var chart = dc.lineChart("#danceability");
 
@@ -80,7 +102,7 @@ function showDanceability(ndx) {
 
     console.log(group);
 
-    chart.width(400)
+    chart.width(200)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
@@ -96,6 +118,36 @@ function showDanceability(ndx) {
 
     chart.render();
 }
+
+// // Scatter plot
+
+// function show_energy_to_danceability_correlation(ndx) {
+//     var energyDim = ndx.dimension(dc.pluck("energy"));
+//     var danceDim = ndx.dimension(function(d) {
+//         return [d.energy, d.danceability];
+//     });
+//     var danceGroup = danceDim.group();
+//     var minEnergy = energyDim.bottom(1)[0].energy;
+//     var maxEnergy = energyDim.top(1)[0].energy;
+
+//     dc.scatterPlot("#energy_to_danceability")
+//         .width(500)
+//         .height(350)
+//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
+//         .brushOn(true)
+//         .symbolSize(6)
+//         .clipPadding(10)
+//         .yAxisLabel("Danceability")
+//         // .title(function(d) {
+//         //     return "Danceability"
+//         .dimension(danceDim)
+//         .group(danceGroup);
+//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+
+// }
+
+
+//Pie Chart - Key
 
 function showKey(ndx) {
     var chart = dc.pieChart("#key");
