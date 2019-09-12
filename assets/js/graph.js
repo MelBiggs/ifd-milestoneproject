@@ -5,13 +5,23 @@ queue()
 function makeGraphs(error, spotifyData) {
     var ndx = crossfilter(spotifyData);
 
+    topArtists(ndx);
     totalSongs(ndx);
     totalArtists(ndx);
-    //averageSongLength(ndx);
+    averageSongLength(ndx);
     showEnergy(ndx);
     showDanceability(ndx);
     //show_energy_to_danceability_correlation(ndx);
     showKey(ndx);
+    //showSongFilter(ndx);
+
+}
+
+function topArtists(ndx) {
+    var dim = ndx.dimension(dc.pluck("artists"));
+    var allArtists = dim.group().all();
+    var filtering = allArtists().dimension(function(d) { return d.value; });
+    filtering.filter(value > 2);
 
 }
 
@@ -33,30 +43,29 @@ function totalArtists(ndx) {
     $("#unique-artists").text(uniqueArtists);
 }
 
-// function averageSongLength(ndx) {
-//     var dim = ndx.dimension(dc.pluck("name"));
-//     // Count them
-//     var AverageSongLength = dim.group().all().length;
-//     return parseFloat(data.name).toFixed(1);
-//     let avg = AverageSongLength / values.length;
-//     return avg;
-// });
 
-// function averageSongLength(ndx) {
-//     var dim = ndx.dimension(dc.pluck("duration_ms"));
-//     // Count them
-//     var AverageSongLength = dim.group().all().length;
-//     var avg = AverageSongLength / values.length;
-//     return millisToMinutesAndSeconds(parseInt(data.duration_ms));
-//     $("#individual-songs").text(individualSongs);
-// });
+function averageSongLength(ndx) {
+    var dim = ndx.dimension(dc.pluck("duration_ms"));
+    // Count them
+    var songLengths = dim.group().all();
+    var songCount = songLengths.length;
+
+    var summedLength = 0;
+
+    songLengths.forEach(function(songLength) {
+        summedLength += parseFloat(songLength.key);
+    });
+    var avg = summedLength / songCount;
+    var averageMins = millisToMinutesAndSeconds(avg);
+    $("#AverageLengthCard").text(averageMins);
+};
 
 
-// function millisToMinutesAndSeconds(millis) {
-//     var minutes = Math.floor(millis / 60000);
-//     var seconds = ((millis % 60000) / 1000).toFixed(0);
-//     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-// }
+function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds + " mins";
+}
 
 
 //Line Chart - Energy
@@ -72,13 +81,14 @@ function showEnergy(ndx) {
     console.log(group);
 
     chart
-        .width(200)
+        .width(500)
         .height(300)
         // .y(d3.scale.linear().domain([0,1]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
         .yAxisLabel("Song Count")
         .xAxisLabel("Energy")
+        .margins({ top: 10, right: 50, bottom: 75, left: 75 })
         .dimension(dim)
         .group(group)
         .on('renderlet', function(chart) {
@@ -102,12 +112,13 @@ function showDanceability(ndx) {
 
     console.log(group);
 
-    chart.width(200)
+    chart.width(400)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
         .yAxisLabel("Frequency")
         .xAxisLabel("Danceability")
+        .margins({ top: 10, right: 2, bottom: 75, left: 10 })
         .dimension(dim)
         .group(group)
         .on('renderlet', function(chart) {
@@ -144,8 +155,23 @@ function showDanceability(ndx) {
 //         .group(danceGroup);
 //     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
 
-// }
+//}
 
+//Filter for Songs
+
+// function showSongFilter(ndx) {
+//     let dim = dataFor2017.dimension(dc.pluck("name"));
+//     let group = dim.group();
+
+//     dc.selectMenu("#name-selection")
+//         .dimension(dim)
+//         .group(group)
+//         .promptText("All Songs")
+//         .multiple(false)
+//         .title(function(d) {
+//             return d.key;
+//         });
+// }
 
 //Pie Chart - Key
 
