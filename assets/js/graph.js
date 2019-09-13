@@ -15,22 +15,33 @@ function makeGraphs(error, spotifyData) {
     showKey(ndx);
     showSongFilter(ndx);
     showMode(ndx);
+    addXAxis(rowChart, displayText);
 }
 
-// function addXAxis(rowChart, displayText)
-// {
+// function addXAxis(rowChart, displayText) {
 //     rowChart.svg()
-//                 .append("text")
-//                 .attr("class", "Number of Times in the Top 100")
-//                 .attr("text-anchor", "middle")
-//                 .attr("x", rowChart.width()/2)
-//                 .attr("y", rowChart.height()-3.5)
-//                 .text(displayText);
+//         .append("text")
+//         .attr("class", "Number of Times in the Top 100")
+//         .attr("text-anchor", "middle")
+//         .attr("x", rowChart.width() / 2)
+//         .attr("y", rowChart.height() - 3.5)
+//         .text(displayText);
 // }
 // AddXAxis(chart1, "This is the x-axis!");
+
+
+
+//Trying to make cards dynamic 
+
+// function totalSongs(ndx) {
+//     var totalSongsND = dc.numberDisplay("#all-songs");
+//     var dim = ndx.dimension(dc.pluck("name"));
+//     var allSongs = dim.group().all().length;
+
+//     totalSongsND
+//         .group(allSongs);
+
 // }
-
-
 
 
 // function totalSongs(ndx) {
@@ -42,24 +53,21 @@ function makeGraphs(error, spotifyData) {
 //         .group(totalAcc);
 // }
 
+
+// function totalSongs()
+// var all = ndx.groupAll();
+
+
+// dc.dataCount('#all-songs')
+//     .crossfilter(ndx)
+//     .groupAll(all);
+
+
 function totalSongs(ndx) {
-    // Select the artists
     var dim = ndx.dimension(dc.pluck("name"));
-    // Count them
-    var allSongs = dim.group().all().length;
-    // Use jQuery to display the value on the page
-    $("#all-songs").text(allSongs);
+    var individualSongs = dim.group().all().length;
+    $("#all-songs").text(individualSongs);
 }
-
-// function totalSongs(ndx) {
-//     var totalSongsND = dc.numberDisplay("#all-songs");
-//     var dim = ndx.dimension(dc.pluck("name"));
-//     var allSongs = dim.group().all().length;
-    
-//     totalSongsND
-//         .group(allSongs);
-
-// }
 
 function totalArtists(ndx) {
     // Select the artists
@@ -161,7 +169,7 @@ function showDanceability(ndx) {
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
-        .yAxisLabel("Frequency")
+        .yAxisLabel("Song Count")
         .xAxisLabel("Danceability")
         .margins({ top: 10, right: 2, bottom: 75, left: 10 })
         .dimension(dim)
@@ -241,7 +249,8 @@ function showKey(ndx) {
         .innerRadius(100)
         .dimension(keyDimension)
         .group(group)
-        .legend(dc.legend())
+        .renderLabel(true)
+        .legend(dc.legend().itemHeight(13).gap(5))
         .on('pretransition', function(chart) {
             chart.selectAll('text.pie-slice').text(function(d) {
                 return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100)) + '%';
