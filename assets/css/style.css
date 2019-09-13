@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 500;
+}
+
+
 .navbar-brand {
     font-size: 24px!important;
 }
@@ -5,6 +13,7 @@
 .cards {
     padding-top: 20px;
     padding-bottom: 20px;
+
 }
 
 .card-header {
@@ -15,4 +24,8 @@
 .card-body {
     font-size: 25px;
     text-align: center;
+}
+
+#topArtistsChart {
+    justify: middle;
 }

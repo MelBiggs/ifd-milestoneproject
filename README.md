@@ -21,6 +21,8 @@ In this section, you should go over the different parts of your project, and des
 
 ### Existing Features
 
+Bootswatch Slate template
+
 Feature 1 - allows users X to achieve Y, by having them fill out Z
 ...
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.

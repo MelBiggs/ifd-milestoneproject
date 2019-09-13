@@ -17,7 +17,6 @@ function makeGraphs(error, spotifyData) {
     showMode(ndx);
 }
 
-
 // function addXAxis(rowChart, displayText)
 // {
 //     rowChart.svg()
@@ -33,14 +32,34 @@ function makeGraphs(error, spotifyData) {
 
 
 
+
+// function totalSongs(ndx) {
+//     var dim = dataFor2017.dimension(dc.pluck("ref"));
+//     let totalAcc = dim.group().reduceSum(dc.pluck("number_of_accidents"));
+
+//     dc.numberDisplay("#accidents-total")
+//         .formatNumber(d3.format(".2s"))
+//         .group(totalAcc);
+// }
+
 function totalSongs(ndx) {
     // Select the artists
     var dim = ndx.dimension(dc.pluck("name"));
     // Count them
-    var individualSongs = dim.group().all().length;
+    var allSongs = dim.group().all().length;
     // Use jQuery to display the value on the page
-    $("#individual-songs").text(individualSongs);
+    $("#all-songs").text(allSongs);
 }
+
+// function totalSongs(ndx) {
+//     var totalSongsND = dc.numberDisplay("#all-songs");
+//     var dim = ndx.dimension(dc.pluck("name"));
+//     var allSongs = dim.group().all().length;
+    
+//     totalSongsND
+//         .group(allSongs);
+
+// }
 
 function totalArtists(ndx) {
     // Select the artists
@@ -85,6 +104,7 @@ function topArtists(ndx) {
         .height(480)
         .dimension(dim)
         .group(allArtists)
+        //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
         .data(function(group) { return group.top(18); });
 
     chart.render();
@@ -104,7 +124,7 @@ function showEnergy(ndx) {
 
     chart
         .width(500)
-            .height(300)
+        .height(300)
         // .y(d3.scale.linear().domain([0,1]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         // .clipPadding(50)
@@ -183,18 +203,18 @@ function showDanceability(ndx) {
 
 //}
 
-//Filter for Songs
+//Filter for Artists
 
 function showSongFilter(ndx) {
-    let dim = ndx.dimension(dc.pluck("name"));
+    let dim = ndx.dimension(dc.pluck("artists"));
     let group = dim.group();
 
-    var selectionMenu = dc.selectMenu("#name-selection");
+    var selectionMenu = dc.selectMenu("#artist-selection");
 
     selectionMenu
         .dimension(dim)
         .group(group)
-        .promptText("All Songs")
+        .promptText("All Artists")
         .multiple(false)
         .title(function(d) {
             return d.key;
@@ -231,7 +251,7 @@ function showKey(ndx) {
     chart.render();
 }
 
-// function to transfor the number scale for music key to letters
+// function to transform the number scale for music key to letters
 function transformKey(key) {
     var keyString;
 
@@ -295,6 +315,8 @@ function transformKey(key) {
 //         .xAxisLabel("Valence")
 //         .yAxis().ticks(5);
 // }
+
+//Pie Chart - Mode
 
 function showMode(ndx) {
     var chart = dc.pieChart("#mode");
