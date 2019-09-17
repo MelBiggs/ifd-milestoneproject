@@ -164,7 +164,7 @@ function showDanceability(ndx) {
 
     console.log(group);
 
-    chart.width(400)
+    chart.width(430)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
@@ -185,29 +185,29 @@ function showDanceability(ndx) {
 // // Scatter plot
 
 // function show_energy_to_danceability_correlation(ndx) {
-    //     var energyDim = ndx.dimension(dc.pluck("energy"));
-    //     var danceDim = ndx.dimension(function(d) {
-    //         return [d.energy, d.danceability];
-    //     });
-    //     var danceGroup = danceDim.group();
-    //     var minEnergy = energyDim.bottom(1)[0].energy;
-    //     var maxEnergy = energyDim.top(1)[0].energy;
+//     var energyDim = ndx.dimension(dc.pluck("energy"));
+//     var danceDim = ndx.dimension(function(d) {
+//         return [d.energy, d.danceability];
+//     });
+//     var danceGroup = danceDim.group();
+//     var minEnergy = energyDim.bottom(1)[0].energy;
+//     var maxEnergy = energyDim.top(1)[0].energy;
 
-    //     dc.scatterPlot("#energy_to_danceability")
-    //         .width(500)
-    //         .height(350)
-    //         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
-    //         .brushOn(true)
-    //         .symbolSize(6)
-    //         .clipPadding(10)
-    //         //.yAxisLabel("Danceability")
-    //         // .title(function(d) {
-    //         //     return "Danceability"
-    //         .dimension(danceDim)
-    //         .group(danceGroup);
-    //     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+//     dc.scatterPlot("#energy_to_danceability")
+//         .width(500)
+//         .height(350)
+//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
+//         .brushOn(true)
+//         .symbolSize(6)
+//         .clipPadding(10)
+//         //.yAxisLabel("Danceability")
+//         // .title(function(d) {
+//         //     return "Danceability"
+//         .dimension(danceDim)
+//         .group(danceGroup);
+//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
 
-    // }
+// }
 
 //Filter for Artists
 
@@ -242,7 +242,7 @@ function showKey(ndx) {
 
     // Create the chart
     chart
-        .width(600)
+        .width(480)
         .height(400)
         .innerRadius(100)
         .dimension(keyDimension)
@@ -337,7 +337,7 @@ function showMode(ndx) {
 
     // Create the chart
     chart
-        .width(600)
+        .width(470)
         .height(400)
         .innerRadius(100)
         .dimension(modeDimension)
