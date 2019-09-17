@@ -1,3 +1,5 @@
+/* global $*/
+
 queue()
     .defer(d3.csv, "assets/data/top2018.csv")
     .await(makeGraphs);
@@ -5,17 +7,17 @@ queue()
 function makeGraphs(error, spotifyData) {
     var ndx = crossfilter(spotifyData);
 
-    topArtists(ndx);
     totalSongs(ndx);
     totalArtists(ndx);
     averageSongLength(ndx);
+    showSongFilter(ndx);
     showEnergy(ndx);
     showDanceability(ndx);
-    //show_energy_to_danceability_correlation(ndx);
+    // show_energy_to_danceability_correlation(ndx);
     showKey(ndx);
-    showSongFilter(ndx);
     showMode(ndx);
-    addXAxis(rowChart, displayText);
+    topArtists(ndx);
+    // addXAxis(rowChart, displayText);
 }
 
 // function addXAxis(rowChart, displayText) {
@@ -78,7 +80,6 @@ function totalArtists(ndx) {
     $("#unique-artists").text(uniqueArtists);
 }
 
-
 function averageSongLength(ndx) {
     var dim = ndx.dimension(dc.pluck("duration_ms"));
     // Count them
@@ -94,7 +95,6 @@ function averageSongLength(ndx) {
     var averageMins = millisToMinutesAndSeconds(avg);
     $("#AverageLengthCard").text(averageMins);
 };
-
 
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
@@ -116,7 +116,7 @@ function topArtists(ndx) {
         .data(function(group) { return group.top(18); });
 
     chart.render();
-}
+};
 
 //Line Chart - Energy
 
@@ -137,9 +137,8 @@ function showEnergy(ndx) {
         .x(d3.scale.linear().domain([0.30, 1.00]))
         // .clipPadding(50)
         .brushOn(false)
-        .yAxisLabel("Song Count")
-        .xAxisLabel("Energy")
-        .margins({ top: 10, right: 50, bottom: 75, left: 75 })
+        .xAxisLabel("Energy Level")
+        .margins({ top: 10, right: 50, bottom: 75, left: 80 })
         .dimension(dim)
         .group(group)
         .elasticY(true)
@@ -169,9 +168,8 @@ function showDanceability(ndx) {
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
-        .yAxisLabel("Song Count")
         .xAxisLabel("Danceability")
-        .margins({ top: 10, right: 2, bottom: 75, left: 10 })
+        .margins({ top: 10, right: 2, bottom: 75, left: 80 })
         .dimension(dim)
         .group(group)
         .elasticY(true)
@@ -187,29 +185,29 @@ function showDanceability(ndx) {
 // // Scatter plot
 
 // function show_energy_to_danceability_correlation(ndx) {
-//     var energyDim = ndx.dimension(dc.pluck("energy"));
-//     var danceDim = ndx.dimension(function(d) {
-//         return [d.energy, d.danceability];
-//     });
-//     var danceGroup = danceDim.group();
-//     var minEnergy = energyDim.bottom(1)[0].energy;
-//     var maxEnergy = energyDim.top(1)[0].energy;
+    //     var energyDim = ndx.dimension(dc.pluck("energy"));
+    //     var danceDim = ndx.dimension(function(d) {
+    //         return [d.energy, d.danceability];
+    //     });
+    //     var danceGroup = danceDim.group();
+    //     var minEnergy = energyDim.bottom(1)[0].energy;
+    //     var maxEnergy = energyDim.top(1)[0].energy;
 
-//     dc.scatterPlot("#energy_to_danceability")
-//         .width(500)
-//         .height(350)
-//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
-//         .brushOn(true)
-//         .symbolSize(6)
-//         .clipPadding(10)
-//         .yAxisLabel("Danceability")
-//         // .title(function(d) {
-//         //     return "Danceability"
-//         .dimension(danceDim)
-//         .group(danceGroup);
-//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+    //     dc.scatterPlot("#energy_to_danceability")
+    //         .width(500)
+    //         .height(350)
+    //         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
+    //         .brushOn(true)
+    //         .symbolSize(6)
+    //         .clipPadding(10)
+    //         //.yAxisLabel("Danceability")
+    //         // .title(function(d) {
+    //         //     return "Danceability"
+    //         .dimension(danceDim)
+    //         .group(danceGroup);
+    //     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
 
-//}
+    // }
 
 //Filter for Artists
 

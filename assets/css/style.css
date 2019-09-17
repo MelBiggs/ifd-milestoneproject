@@ -26,6 +26,34 @@ body {
     text-align: center;
 }
 
-#topArtistsChart {
-    justify: middle;
+
+
+.card-header,
+.selector-label {
+    text-transform: uppercase;
+}
+
+.filter-section {
+    padding-bottom: 3em;
+}
+
+.x-axis-label {
+    font-size: 20px;
+}
+
+
+.valence-chart {
+    font-size: 20px;
+}
+
+.line-chart-comment {
+    justify: center;
+}
+
+.spotify-icon {
+    padding-top: 1.25em;
+}
+
+.topArtistsChart {
+    text-align: : center;
 }

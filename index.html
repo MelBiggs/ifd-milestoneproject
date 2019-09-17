@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/libraries/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/libraries/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 
     <script src="assets/js/libraries/d3.min.js"></script>
     <script src="assets/js/libraries/crossfilter.min.js"></script>
@@ -32,8 +34,8 @@
         <div class="container-fluid">
             <div class="row">
                 <!--- Total songs card --->
-                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
-                    <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
+                <div class="col-lg-4 col-md-12 col-sm-12 px-2">
+                    <div class="shadow card text-white bg-secondary mb-3 tile-s1">
                         <div class="card-header">Total Songs</div>
                         <div class="card-body">
                             <div class="number-box" id="all-songs"></div>
@@ -42,7 +44,7 @@
                 </div>
 
                 <!--- Total artists card --->
-                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
+                <div class="col-lg-4 col-md-12 col-sm-12 px-2">
                     <div class="card border-success mb-3">
                         <div class="card-header">Total Artists</div>
                         <div class="card-body" id="unique-artists"> </div>
@@ -50,9 +52,9 @@
                 </div>
 
                 <!--- Average Song Length card --->
-                <div class="col-lg-4 col-md-4 col-sm-12 px-2">
+                <div class="col-lg-4 col-md-12 col-sm-12 px-2">
                     <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
-                        <div class="card-header">Average Song Length</div>
+                        <div class="card-header">Song Length Average</div>
                         <div class="card-body">
                             <div class="number-box" id="AverageLengthCard"></div>
                         </div>
@@ -62,72 +64,107 @@
         </div>
     </section>
 
-    <div class="container-fluid">
+    <!-- Filter by Song-->
 
-        <div class="row">
-
-            <!-- Line chart representing Energy of Songs -->
-            <div class="col-xs-12 col-lg-6 px-2">
-                <div class="card text-white bg-primary mb-3 shadow-box box tile-s4">
-                    <div class="card-header">Energy</div>
-                    <div class="card-body d-flex justify-content-center">
-                        <div id="energy"></div>
-                    </div>
+    <section>
+        <div class="filter-section col-xl-12 px-2 mt-3">
+            <div class="row filter">
+                <div class="col-xl-12 d-flex justify-content-center selector-label">Filter by Artist:</div>
+                <div class="col-xl-12 mt-2 d-flex justify-content-center">
+                    <div id="artist-selection"></div>
                 </div>
             </div>
-
-            <!-- Line chart representing Danceability of Songs -->
-            <div class="col-xs-12 col-lg-6 px-2">
-                <div class="card text-white bg-secondary mb-3 shadow-box box tile-s4">
-                    <div class="card-header">Danceability</div>
-                    <div class="card-body d-flex justify-content-center">
-                        <div id="danceability"></div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
-    </div>
     </section>
 
     <section>
-        <div class="container-fluid col-xs-12 col-lg-12">
+
+        <div class="container-fluid">
+
             <div class="row">
-                <div id="topArtistsChart">
-                    Most Popular Artists
+
+                <!-- Line chart representing Energy of Songs -->
+                <div class="col-xs-12 col-lg-6">
+                    <div class="card text-white bg-primary box">
+                        <div class="card-header">Energy of the music</div>
+                        <div class="card-body d-flex justify-content-center px-4">
+                            <div id="energy"></div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Line chart representing Danceability of Songs -->
+                <div class="col-xs-12 col-lg-6">
+                    <div class="card text-white bg-secondary box">
+                        <div class="card-header">Danceability of the music</div>
+                        <div class="card-body d-flex justify-content-center ">
+                            <div id="danceability"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!--Line Chart with Correlation between Valence, Energy & Danceability>-->
+        <div class="col-xs-12 col-lg-12">
+            <div class="card bg-light mb-3">
+                <div class="card-header valence-chart">Is a song's valence linked to it's danceability & energy</div>
+                <div class="card-body d-flex justify-content-center ">
+                    <div id="energy_to_danceability"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card line-chart-comment">
+            <div class="card-body">
+                <p class="card-text">
+                    <h4>Valence is positively correlated with danceability and energy. As happy songs will make people energetic and want to dance, the correlation make a lot sense.</h4>
+                </p>
+                <h6 class="card-subtitle text-muted">Spotify define the valence of a song as a measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound
+                    more negative (e.g. sad, depressed, angry). </h6>
+                <a target="_blank " href="https://community.spotify.com/t5/Content-Questions/Valence-as-a-measure-of-happiness/td-p/4385221"><i class="fab fa-spotify spotify-icon"></i></a>
             </div>
         </div>
         </div>
     </section>
-
-    <!--<h4>Energy & Danceability Correlation</h4>-->
-    <!--<br>-->
-    <!--<div class="col-sm" id="energy_to_danceability"></div>-->
-
 
     <!-- Pie Charts with Key and Mode -->
     <section>
         <div class="container-fluid">
-            <div class="col-xs-12 col-lg-6 pie" id="key">
-                <h3>Key</h3>
+            <div class="row">
+                <div class="card bg-light mb-3 col-xs-12 col-lg-6 pie">
+                    <div class="card-header">Key of Songs</div>
+                    <div class="card-body" id="key">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-xs-12 col-lg-6 pie" id="mode">
-            <h3>Mode</h3>
-        </div>
-    </section>
-    <!-- Filter by Song-->
+        <!--<div class="container-fluid">-->
+        <!--    <div class="col-xs-12 col-lg-6 pie" id="key">-->
+        <!--        <h3>Key</h3>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-12 col-lg-6 pie" id="mode">-->
+        <!--    <h3>Mode</h3>-->
+        <!--</div>-->
 
-    <div class="col-xl-12 px-2 mt-4">
-        <div class="row">
-            <div class="col-xl-12 d-flex justify-content-start selector-label">Filter by Artist:</div>
-            <div class="col-xl-12 d-flex justify-content-start">
-                <div id="artist-selection"></div>
+        <!--- Row Chart with Top 18 Artists of 2018-->
+        <section>
+            <div class="container-fluid col-xs-12 col-lg-12">
+                <div class="row">
+                    <div id="topArtistsChart">
+                        Most Popular Artists
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+            </div>
+        </section>
+
+        <!--<h4>Energy & Danceability Correlation</h4>-->
+        <!--<br>-->
+        <!--<div class="col-sm" id="energy_to_danceability"></div>-->
 
 
 </body>
