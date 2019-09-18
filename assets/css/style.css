@@ -5,15 +5,17 @@ body {
     font-weight: 500;
 }
 
+/*Navbar*/
 
 .navbar-brand {
     font-size: 24px!important;
 }
 
+/*Top Cards with Totals & Averages*/
+
 .cards {
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
 
 .card-header {
@@ -26,33 +28,50 @@ body {
     text-align: center;
 }
 
-
-
 .card-header,
 .selector-label {
     text-transform: uppercase;
 }
 
+/*Artists Filter*/
+
 .filter-section {
-    padding-bottom: 3em;
+    padding-bottom: 3.5em;
 }
+
+/*Line Charts*/
 
 .x-axis-label {
     font-size: 20px;
 }
 
-
 .valence-chart {
     font-size: 20px;
 }
 
-.line-chart-comment {}
+.card-body {
+    padding-top: 5px;
+}
 
 
+/*Comment Cards */
+
+.comment-card-line {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
 
 .spotify-icon {
-    padding-top: 1.25em;
+    padding-top: 5px;
 }
+
+.card-subtitle {
+    text-align: left;
+    padding-top: 10px;
+}
+
+/*Top Artists Chart*/
 
 .topArtistsChart {
     text-align: : center;

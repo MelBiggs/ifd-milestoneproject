@@ -1,4 +1,5 @@
 /* global $*/
+/* global dc*/
 
 queue()
     .defer(d3.csv, "assets/data/top2018.csv")
@@ -13,63 +14,22 @@ function makeGraphs(error, spotifyData) {
     showSongFilter(ndx);
     showEnergy(ndx);
     showDanceability(ndx);
-    // show_energy_to_danceability_correlation(ndx);
     showKey(ndx);
     showMode(ndx);
     topArtists(ndx);
+    //show_energy_val_danceability_correlation(ndx);
     // addXAxis(rowChart, displayText);
 }
 
-// function addXAxis(rowChart, displayText) {
-//     rowChart.svg()
-//         .append("text")
-//         .attr("class", "Number of Times in the Top 100")
-//         .attr("text-anchor", "middle")
-//         .attr("x", rowChart.width() / 2)
-//         .attr("y", rowChart.height() - 3.5)
-//         .text(displayText);
-// }
-// AddXAxis(chart1, "This is the x-axis!");
-
-
-
-//Trying to make cards dynamic 
-
-// function totalSongs(ndx) {
-//     var totalSongsND = dc.numberDisplay("#all-songs");
-//     var dim = ndx.dimension(dc.pluck("name"));
-//     var allSongs = dim.group().all().length;
-
-//     totalSongsND
-//         .group(allSongs);
-
-// }
-
-
-// function totalSongs(ndx) {
-//     var dim = dataFor2017.dimension(dc.pluck("ref"));
-//     let totalAcc = dim.group().reduceSum(dc.pluck("number_of_accidents"));
-
-//     dc.numberDisplay("#accidents-total")
-//         .formatNumber(d3.format(".2s"))
-//         .group(totalAcc);
-// }
-
-
-// function totalSongs()
-// var all = ndx.groupAll();
-
-
-// dc.dataCount('#all-songs')
-//     .crossfilter(ndx)
-//     .groupAll(all);
-
+// Function to get total songs
 
 function totalSongs(ndx) {
     var dim = ndx.dimension(dc.pluck("name"));
     var individualSongs = dim.group().all().length;
     $("#all-songs").text(individualSongs);
 }
+
+// Function to get total artists
 
 function totalArtists(ndx) {
     // Select the artists
@@ -79,6 +39,8 @@ function totalArtists(ndx) {
     // Use jQuery to display the value on the page
     $("#unique-artists").text(uniqueArtists);
 }
+
+// Function to get average song length 
 
 function averageSongLength(ndx) {
     var dim = ndx.dimension(dc.pluck("duration_ms"));
@@ -102,21 +64,24 @@ function millisToMinutesAndSeconds(millis) {
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-function topArtists(ndx) {
-    var dim = ndx.dimension(dc.pluck("artists"));
-    var allArtists = dim.group();
-    var chart = dc.rowChart("#topArtistsChart");
+//Filter for Artists 
 
-    chart
-        .width(768)
-        .height(480)
+function showSongFilter(ndx) {
+    let dim = ndx.dimension(dc.pluck("artists"));
+    let group = dim.group();
+
+    var selectionMenu = dc.selectMenu("#artist-selection");
+
+    selectionMenu
         .dimension(dim)
-        .group(allArtists)
-        //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
-        .data(function(group) { return group.top(18); });
-
-    chart.render();
-};
+        .group(group)
+        .promptText("All Artists")
+        .multiple(false)
+        .title(function(d) {
+            return d.key;
+        })
+        .render();
+}
 
 //Line Chart - Energy
 
@@ -182,51 +147,9 @@ function showDanceability(ndx) {
     chart.render();
 }
 
-// // Scatter plot
+// Scatter Plot - Valence w/ Danceability and Energy
 
-// function show_energy_to_danceability_correlation(ndx) {
-//     var energyDim = ndx.dimension(dc.pluck("energy"));
-//     var danceDim = ndx.dimension(function(d) {
-//         return [d.energy, d.danceability];
-//     });
-//     var danceGroup = danceDim.group();
-//     var minEnergy = energyDim.bottom(1)[0].energy;
-//     var maxEnergy = energyDim.top(1)[0].energy;
 
-//     dc.scatterPlot("#energy_to_danceability")
-//         .width(500)
-//         .height(350)
-//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
-//         .brushOn(true)
-//         .symbolSize(6)
-//         .clipPadding(10)
-//         //.yAxisLabel("Danceability")
-//         // .title(function(d) {
-//         //     return "Danceability"
-//         .dimension(danceDim)
-//         .group(danceGroup);
-//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
-
-// }
-
-//Filter for Artists
-
-function showSongFilter(ndx) {
-    let dim = ndx.dimension(dc.pluck("artists"));
-    let group = dim.group();
-
-    var selectionMenu = dc.selectMenu("#artist-selection");
-
-    selectionMenu
-        .dimension(dim)
-        .group(group)
-        .promptText("All Artists")
-        .multiple(false)
-        .title(function(d) {
-            return d.key;
-        })
-        .render();
-}
 
 //Pie Chart - Key
 
@@ -258,7 +181,8 @@ function showKey(ndx) {
     chart.render();
 }
 
-// function to transform the number scale for music key to letters
+// Function to transform the number scale for music key to letters
+
 function transformKey(key) {
     var keyString;
 
@@ -304,25 +228,6 @@ function transformKey(key) {
     return keyString;
 }
 
-
-// function show_valence(ndx) {
-//     var dim = ndx.dimension(dc.pluck('valence'));
-//     var group = dim.group();
-
-//     dc.barChart("#valence-chart")
-//         .width(400)
-//         .height(300)
-//         .margins({top: 10, right: 50, bottom: 30, left: 50})
-//         .dimension(dim)
-//         .group(group)
-//         .transitionDuration(500)
-//         .x(d3.scale.ordinal())
-//         .xUnits(dc.units.ordinal)
-//         .elasticY(true)
-//         .xAxisLabel("Valence")
-//         .yAxis().ticks(5);
-// }
-
 //Pie Chart - Mode
 
 function showMode(ndx) {
@@ -352,7 +257,8 @@ function showMode(ndx) {
     chart.render();
 }
 
-// function to transform the number scale for mode to minor and major
+// Function to transform the number scale for mode to Minor and Major
+
 function transformMode(mode) {
     var modeString;
 
@@ -365,5 +271,149 @@ function transformMode(mode) {
             break;
     }
     return modeString;
-
 }
+
+//Row Chart of Top 18 Artists 
+
+function topArtists(ndx) {
+    var dim = ndx.dimension(dc.pluck("artists"));
+    var allArtists = dim.group();
+    var chart = dc.rowChart("#topArtistsChart");
+
+    chart
+        .width(768)
+        .height(480)
+        .dimension(dim)
+        .group(allArtists)
+        //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
+        .data(function(group) { return group.top(18); });
+
+    chart.render();
+};
+
+
+
+// function show_energy_val_danceability_correlation(ndx) {
+//     var dim = ndx.dimension(dc.pluck('')),
+//         grp1 = dim.group().dc.pluck('danceability'),
+//         grp2 = dim.group().dc.pluck('energy'),
+//         grp3 = dim.group().dc.pluck('valence');
+
+//     var composite = dc.compositeChart("#energy_to_danceability_to_valence");
+
+//     composite
+//         .width(768)
+//         .height(480)
+//         .x(d3.scaleLinear().domain([0, 20]))
+//         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+//         .renderHorizontalGridLines(true)
+//         .compose([
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('red')
+//             .group(grp1, "Danceability")
+//             .dashStyle([2, 2]),
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('blue')
+//             .group(grp2, "Valence")
+//             .dashStyle([5, 5])
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('orange')
+//             .group(grp3, "Valence")
+//             .dashStyle([2, 2]),
+//         ])
+//         .brushOn(false)
+//         .render();
+
+// }
+
+
+// function show_valence(ndx) {
+//     var dim = ndx.dimension(dc.pluck('valence'));
+//     var group = dim.group();
+
+//     dc.barChart("#valence-chart")
+//         .width(400)
+//         .height(300)
+//         .margins({top: 10, right: 50, bottom: 30, left: 50})
+//         .dimension(dim)
+//         .group(group)
+//         .transitionDuration(500)
+//         .x(d3.scale.ordinal())
+//         .xUnits(dc.units.ordinal)
+//         .elasticY(true)
+//         .xAxisLabel("Valence")
+//         .yAxis().ticks(5);
+// }
+
+// // Scatter plot
+
+// function show_energy_to_danceability_correlation(ndx) {
+//     var energyDim = ndx.dimension(dc.pluck("energy"));
+//     var danceDim = ndx.dimension(function(d) {
+//         return [d.energy, d.danceability];
+//     });
+//     var danceGroup = danceDim.group();
+//     var minEnergy = energyDim.bottom(1)[0].energy;
+//     var maxEnergy = energyDim.top(1)[0].energy;
+
+//     dc.scatterPlot("#energy_to_danceability")
+//         .width(500)
+//         .height(350)
+//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
+//         .brushOn(true)
+//         .symbolSize(6)
+//         .clipPadding(10)
+//         //.yAxisLabel("Danceability")
+//         // .title(function(d) {
+//         //     return "Danceability"
+//         .dimension(danceDim)
+//         .group(danceGroup);
+//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+
+// }
+
+// function addXAxis(rowChart, displayText) {
+//     rowChart.svg()
+//         .append("text")
+//         .attr("class", "Number of Times in the Top 100")
+//         .attr("text-anchor", "middle")
+//         .attr("x", rowChart.width() / 2)
+//         .attr("y", rowChart.height() - 3.5)
+//         .text(displayText);
+// }
+// AddXAxis(chart1, "This is the x-axis!");
+
+
+//Trying to make cards dynamic 
+
+// function totalSongs(ndx) {
+//     var totalSongsND = dc.numberDisplay("#all-songs");
+//     var dim = ndx.dimension(dc.pluck("name"));
+//     var allSongs = dim.group().all().length;
+
+//     totalSongsND
+//         .group(allSongs);
+
+// }
+
+
+// function totalSongs(ndx) {
+//     var dim = dataFor2017.dimension(dc.pluck("ref"));
+//     let totalAcc = dim.group().reduceSum(dc.pluck("number_of_accidents"));
+
+//     dc.numberDisplay("#accidents-total")
+//         .formatNumber(d3.format(".2s"))
+//         .group(totalAcc);
+// }
+
+
+// function totalSongs()
+// var all = ndx.groupAll();
+
+
+// dc.dataCount('#all-songs')
+//     .crossfilter(ndx)
+//     .groupAll(all);

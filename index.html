@@ -35,7 +35,7 @@
             <div class="row">
                 <!--- Total songs card --->
                 <div class="col-lg-4 col-md-12 col-sm-12 px-2">
-                    <div class="shadow card text-white bg-secondary mb-3 tile-s1">
+                    <div class="shadow card text-white bg-secondary border-success mb-3 tile-s1">
                         <div class="card-header">Total Songs</div>
                         <div class="card-body">
                             <div class="number-box" id="all-songs"></div>
@@ -53,7 +53,7 @@
 
                 <!--- Average Song Length card --->
                 <div class="col-lg-4 col-md-12 col-sm-12 px-2">
-                    <div class="card text-white bg-secondary mb-3 shadow-box tile-s1">
+                    <div class="card text-white bg-secondary border-success mb-3 shadow-box tile-s1">
                         <div class="card-header">Song Length Average</div>
                         <div class="card-body">
                             <div class="number-box" id="AverageLengthCard"></div>
@@ -108,42 +108,50 @@
         <br>
 
         <!--Line Chart with Correlation between Valence, Energy & Danceability>-->
-        <div class="col-xs-12 col-lg-12">
-            <div class="card bg-light mb-3">
-                <div class="card-header valence-chart">Is a song's valence linked to it's danceability & energy</div>
-                <div class="card-body d-flex justify-content-center ">
-                    <div id="energy_to_danceability"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header valence-chart">Is a song's valence linked to it's danceability & energy?</div>
+                        <div class="card-body d-flex justify-content-center ">
+                            <div id="energy_to_danceability_to_valence"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="card line-chart-comment">
-            <div class="card-body">
-                <p class="card-text">
-                    <h4>Valence is positively correlated with danceability and energy. As happy songs will make people energetic and want to dance, the correlation make a lot sense.</h4>
-                </p>
-                <h6 class="card-subtitle text-muted">Spotify define the valence of a song as a measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound
-                    more negative (e.g. sad, depressed, angry). </h6>
-                <a target="_blank " href="https://community.spotify.com/t5/Content-Questions/Valence-as-a-measure-of-happiness/td-p/4385221"><i class="fab fa-spotify spotify-icon"></i></a>
+        <div class="container-fluid comment-card-line ">
+            <div class="row justify-content-center">
+                <div class="card col-xs-8 col-lg-8 ">
+                    <div class="card-body ">
+                        <h6 class="card-subtitle text-muted ">A number of musical features are used by Spotify to describe a song. For the Top 100 songs of 2018, let’s look at their energy, danceability and valence. Spotify measures energy from from 0.0 to 1.0 and represents a perceptual
+                            measure of intensity and activity. An energetic track will feel loud, fast and noisy. Death metal, for example, has high energy while a Bach prelude will have low energy.<br>Danceability is measure by how suitable a track is
+                            for dancing, based on certain musical elements including beat strength, tempo, rhythm stability and regularity. A value of 0.0 is least danceable and 1.0 is most danceable.<br>A track with high valence will sound more positive
+                            (e.g. cheerful, happy) and a track with low valance will sound more negative (e.g. sad, angry). It’s also measured 0.0 to 1.0. </h6>
+                        <p class="card-text ">
+                            <h6>Valence is positively correlated with danceability and energy. Happy songs make people energetic and want to dance so the correlation between these factors and valence makes sense.</h6>
+                        </p>
+                        <a target="_blank " href="https://community.spotify.com/t5/Content-Questions/Valence-as-a-measure-of-happiness/td-p/4385221 "><i class="fab fa-spotify spotify-icon "></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 
-    <br>
 
     <!-- Pie Charts with Key and Mode -->
     <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="card bg-light pie">
-                    <div class="card-header">Key of Songs</div>
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="card bg-light pie col-xs-12 col-md-6 col-lg-6 ">
+                    <div class="card-header ">Key of Songs</div>
                     <div class="card-body" id="key">
                     </div>
                 </div>
 
-                <div class="card bg-light pie">
-                    <div class="card-header">Mode of Songs</div>
+                <div class="card bg-light pie col-xs-12 col-md-6 col-lg-6 ">
+                    <div class="card-header ">Mode of Songs</div>
                     <div class="card-body" id="mode">
                     </div>
                 </div>
@@ -155,9 +163,9 @@
 
     <!--- Row Chart with Top 18 Artists of 2018-->
     <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="card border-success mb-3 col-xs-12 col-md-12 col-lg-12">
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="card border-success mb-3 col-xs-12 col-md-12 col-lg-12 ">
                     <div class="card-header">Top 18 Artists of 2018</div>
                     <div class="card-body" id="topArtistsChart">
                     </div>
@@ -166,10 +174,23 @@
         </div>
     </section>
 
-    <!--<h4>Energy & Danceability Correlation</h4>-->
-    <!--<br>-->
-    <!--<div class="col-sm" id="energy_to_danceability"></div>-->
+    <section>
+        <div class="container-fluid">
 
+            <div class="row">
+
+                <div class="col-xl-12 d-flex justify-content-center">
+                    <div class="dc-data-count text-center">
+                        <div class="row">
+                            <div class="col-12 mt-2 mb-2"><a href="javascript:dc.filterAll(); dc.renderAll();" id="reset-button" class="btn btn-success" role="button">Reset All</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
 </body>
 
