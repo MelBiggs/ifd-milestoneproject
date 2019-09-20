@@ -71,8 +71,89 @@ body {
     padding-top: 10px;
 }
 
+/* Pic Charts */
+
+.pie .card {
+    padding: 0;
+}
+
 /*Top Artists Chart*/
 
+.topchart {
+    padding: 0;
+
+}
+
 .topArtistsChart {
-    text-align: : center;
+    text-align: center;
+}
+
+.reset-button {
+    padding-bottom: 2em;
+}
+
+/* Scroll to Top Button*/
+
+/* This code for the back to top button was inspired by a Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
+
+#button {
+    display: inline-block;
+    background-color: transparent;
+    color: #8BDC9D;
+    border: 1px solid #8BDC9D;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 97;
+}
+
+#button::after {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+}
+
+#button:active {
+    color: #ffffff;
+    background-color: #DF691A;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Footer */
+
+footer {
+    background-color: #373938;
+    color: #fafafa;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.footer-source {
+    text-align: center;
+}
+
+.kaggle-link {
+    font-size: 2em;
+    padding-left: .2em;
+    color: #03BBEC;
+}
+
+.footer-spotify {
+    text-align: center;
+    padding-top: .2em;
+    font-size: 2em;
 }

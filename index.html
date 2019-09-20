@@ -17,13 +17,17 @@
     <script src="assets/js/libraries/crossfilter.min.js"></script>
     <script src="assets/js/libraries/dc.min.js"></script>
     <script src="assets/js/libraries/queue.min.js"></script>
-    <script src="assets/js/graph.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="assets/js/graph.js"></script>
+    <script src="assets/js/scroll.js"></script>
 
 
 </head>
 
 <body>
+
+    <!-- Back to top button -->
+    <a id="button"></a>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
@@ -107,7 +111,7 @@
 
         <br>
 
-        <!--Line Chart with Correlation between Valence, Energy & Danceability>-->
+        <!--Line Chart with Correlation between Valence, Energy & Danceability -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-lg-12">
@@ -120,6 +124,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Comment Card on Danceability, Energy and Valence -->
 
         <div class="container-fluid comment-card-line ">
             <div class="row justify-content-center">
@@ -142,15 +148,15 @@
 
     <!-- Pie Charts with Key and Mode -->
     <section>
-        <div class="container-fluid ">
+        <div class="container-fluid pie">
             <div class="row ">
-                <div class="card bg-light pie col-xs-12 col-md-6 col-lg-6 ">
+                <div class="card bg-light col-xs-12 col-md-12 col-lg-6 ">
                     <div class="card-header ">Key of Songs</div>
                     <div class="card-body" id="key">
                     </div>
                 </div>
 
-                <div class="card bg-light pie col-xs-12 col-md-6 col-lg-6 ">
+                <div class="card bg-light col-xs-12 col-md-12 col-lg-6 ">
                     <div class="card-header ">Mode of Songs</div>
                     <div class="card-body" id="mode">
                     </div>
@@ -163,9 +169,9 @@
 
     <!--- Row Chart with Top 18 Artists of 2018-->
     <section>
-        <div class="container-fluid ">
-            <div class="row ">
-                <div class="card border-success mb-3 col-xs-12 col-md-12 col-lg-12 ">
+        <div class="container-fluid topchart">
+            <div class="row justify-content-center">
+                <div class="card border-light mb-3 col-xs-12 col-md-12 col-lg-10 ">
                     <div class="card-header">Top 18 Artists of 2018</div>
                     <div class="card-body" id="topArtistsChart">
                     </div>
@@ -174,6 +180,20 @@
         </div>
     </section>
 
+    <!--- Bar Charts with Top Genres of 2018-->
+    <section>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="card border-light mb-3 col-xs-12 col-md-12 col-lg-10 ">
+                    <div class="card-header">Top Genres of 2018</div>
+                    <div class="card-body" id="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--- Reset Button --->
     <section>
         <div class="container-fluid">
 
@@ -186,11 +206,18 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
+
+    <!--- Footer --->
+
+    <footer class="container-fluid">
+        <div id="footer-details" class="row">
+            <div class="col-sm-12 col-lg-6 footer-source inline-block">The data for this project was taken from: <a class="kaggle-link" target="_blank " href="https://www.kaggle.com/janicejung/spotify-top-100-of-2018-with-genres"><i class="fab fa-kaggle"></i></a></div>
+            <div class="col-sm-12 col-lg-6 footer-spotify inline-block"><a target="_blank " href="https://www.spotify.com/ie/"><i class="fab fa-spotify spotify-icon "></i></a></div>
+        </div>
+    </footer>
 
 </body>
 
