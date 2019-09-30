@@ -33,6 +33,10 @@ body {
     text-transform: uppercase;
 }
 
+.border-secondary {
+    border-color: #84bd00!important;
+}
+
 /*Artists Filter*/
 
 .filter-section {
@@ -64,6 +68,7 @@ body {
 
 .spotify-icon {
     padding-top: 5px;
+    color: #84bd00;
 }
 
 .card-subtitle {
@@ -71,7 +76,7 @@ body {
     padding-top: 10px;
 }
 
-/* Pic Charts */
+/* Pie Charts */
 
 .pie .card {
     padding: 0;
@@ -88,8 +93,16 @@ body {
     text-align: center;
 }
 
+/*Reset Button*/
+
 .reset-button {
+    padding-top: 2em;
     padding-bottom: 2em;
+}
+
+.btn-outline-success {
+    color: #84bd00!important;
+    border-color: #84bd00!important;
 }
 
 /* Scroll to Top Button*/
