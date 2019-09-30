@@ -102,6 +102,7 @@ function showEnergy(ndx) {
         .x(d3.scale.linear().domain([0.30, 1.00]))
         // .clipPadding(50)
         .brushOn(false)
+        .colors(['rgb(132, 189, 0)'])
         .xAxisLabel("Energy Level")
         .margins({ top: 10, right: 50, bottom: 75, left: 80 })
         .dimension(dim)
@@ -133,6 +134,7 @@ function showDanceability(ndx) {
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .brushOn(false)
+        .colors(['rgb(132, 189, 0)'])
         .xAxisLabel("Danceability")
         .margins({ top: 10, right: 2, bottom: 75, left: 80 })
         .dimension(dim)
@@ -150,40 +152,40 @@ function showDanceability(ndx) {
 // Scatter Plot - Valence w/ Danceability and Energy
 
 // function show_energy_val_danceability_correlation(ndx) {
-    //     var dim = ndx.dimension(dc.pluck('id')),
-    //         grp1 = dim.group().dc.pluck('danceability'),
-    //         grp2 = dim.group().dc.pluck('energy'),
-    //         grp3 = dim.group().dc.pluck('valence');
+//     var dim = ndx.dimension(dc.pluck('id')),
+//         grp1 = dim.group().dc.pluck('danceability'),
+//         grp2 = dim.group().dc.pluck('energy'),
+//         grp3 = dim.group().dc.pluck('valence');
 
-    //     var composite = dc.compositeChart("#energy_to_danceability_to_valence");
+//     var composite = dc.compositeChart("#energy_to_danceability_to_valence");
 
-    //     composite
-    //         .width(768)
-    //         .height(480)
-    //         .x(d3.scaleLinear().domain([0, 20]))
-    //         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-    //         .renderHorizontalGridLines(true)
-    //         .compose([
-    //             dc.lineChart(composite)
-    //             .dimension(dim)
-    //             .colors('red')
-    //             .group(grp1, "Danceability")
-    //             .dashStyle([2, 2]),
-    //             dc.lineChart(composite)
-    //             .dimension(dim)
-    //             .colors('blue')
-    //             .group(grp2, "Valence")
-    //             .dashStyle([5, 5])
-    //             dc.lineChart(composite)
-    //             .dimension(dim)
-    //             .colors('orange')
-    //             .group(grp3, "Valence")
-    //             .dashStyle([2, 2]),
-    //         ])
-    //         .brushOn(false)
-    //         .render();
+//     composite
+//         .width(768)
+//         .height(480)
+//         .x(d3.scaleLinear().domain([0, 20]))
+//         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+//         .renderHorizontalGridLines(true)
+//         .compose([
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('red')
+//             .group(grp1, "Danceability")
+//             .dashStyle([2, 2]),
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('blue')
+//             .group(grp2, "Valence")
+//             .dashStyle([5, 5])
+//             dc.lineChart(composite)
+//             .dimension(dim)
+//             .colors('orange')
+//             .group(grp3, "Valence")
+//             .dashStyle([2, 2]),
+//         ])
+//         .brushOn(false)
+//         .render();
 
-    // }
+// }
 
 
 //Pie Chart - Key
@@ -209,7 +211,7 @@ function showKey(ndx) {
     chart
         .width(535)
         .height(400)
-        .innerRadius(100)
+        .innerRadius(60)
         .dimension(keyDimension)
         .group(group)
         .renderLabel(true)
@@ -286,7 +288,7 @@ function showMode(ndx) {
     chart
         .width(470)
         .height(400)
-        .innerRadius(100)
+        .innerRadius(60)
         .dimension(modeDimension)
         .group(group)
         .legend(dc.legend())

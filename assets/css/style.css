@@ -13,6 +13,10 @@ body {
 
 /*Top Cards with Totals & Averages*/
 
+.card {
+    padding: 0;
+}
+
 .cards {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -61,8 +65,7 @@ body {
 /*Comment Cards */
 
 .comment-card-line {
-    margin: 0 auto;
-    float: none;
+
     margin-bottom: 10px;
 }
 
@@ -73,13 +76,13 @@ body {
 
 .card-subtitle {
     text-align: left;
-    padding-top: 10px;
+    padding-top: 2em;
 }
 
 /* Pie Charts */
 
-.pie .card {
-    padding: 0;
+.pieChart {
+    padding-top: 1.5em;
 }
 
 /*Top Artists Chart*/
@@ -91,6 +94,12 @@ body {
 
 .topArtistsChart {
     text-align: center;
+}
+
+/*Genre Chart*/
+
+.genres {
+    padding: 0;
 }
 
 /*Reset Button*/
