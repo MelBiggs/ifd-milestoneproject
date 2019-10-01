@@ -1,6 +1,6 @@
 /* global $*/
 
-var btn = $('#button');
+var btn = $('#returnButton');
 
 $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {

@@ -105,7 +105,6 @@ body {
 /*Reset Button*/
 
 .reset-button {
-    padding-top: 2em;
     padding-bottom: 2em;
 }
 
@@ -118,7 +117,7 @@ body {
 
 /* This code for the back to top button was inspired by a Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
-#button {
+#returnButton {
     display: inline-block;
     background-color: transparent;
     color: #8BDC9D;
@@ -137,7 +136,7 @@ body {
     z-index: 97;
 }
 
-#button::after {
+#returnButton::after {
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
@@ -145,15 +144,33 @@ body {
     line-height: 50px;
 }
 
-#button:active {
+#returnButton:active {
     color: #ffffff;
     background-color: #DF691A;
 }
 
-#button.show {
+#returnButton.show {
     opacity: 1;
     visibility: visible;
 }
+
+/* FACT CARDS */
+
+.factHeading {
+    padding-bottom: 2em;
+}
+
+.factCards {
+    margin: 0;
+    padding-bottom: 2em;
+}
+
+.factCardBody {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
 
 /* Footer */
 
