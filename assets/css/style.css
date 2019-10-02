@@ -49,6 +49,10 @@ body {
 
 /*Line Charts*/
 
+.danceability-chart {
+    padding-right: 10px;
+}
+
 .x-axis-label {
     font-size: 20px;
 }
@@ -57,9 +61,10 @@ body {
     font-size: 20px;
 }
 
-.card-body {
-    padding-top: 5px;
-}
+/*.card-body {
+    */
+    /*    padding-top: 5px;*/
+    /*}*/
 
 
 /*Comment Cards */
@@ -163,7 +168,6 @@ body {
 /* FACT CARDS */
 
 .factCards {
-    padding-top: .5em;
     padding-bottom: 2em;
 }
 
@@ -174,15 +178,6 @@ body {
 
 .fact-lead {
     color: black;
-}
-
-.factHeading {
-    padding-bottom: 2em;
-}
-
-.factCardBody {
-    padding-top: 1em;
-    padding-bottom: 1em;
 }
 
 /* Footer */

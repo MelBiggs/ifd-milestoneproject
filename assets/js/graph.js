@@ -1,5 +1,6 @@
 /* global $*/
 /* global dc*/
+/* global d3*/
 
 queue()
     .defer(d3.csv, "assets/data/top2018.csv")
@@ -17,7 +18,8 @@ function makeGraphs(error, spotifyData) {
     showKey(ndx);
     showMode(ndx);
     topArtists(ndx);
-    show_energy_val_danceability_correlation(ndx);
+    //show_energy_val_danceability_correlation(ndx);
+    show_genre(ndx);
     // addXAxis(rowChart, displayText);
 }
 
@@ -113,7 +115,6 @@ function showEnergy(ndx) {
                 console.log('click!', d);
             });
         });
-
     chart.render();
 }
 
@@ -334,6 +335,55 @@ function topArtists(ndx) {
 
     chart.render();
 };
+
+//Bar Chart of Genres
+
+function show_genre(ndx) {
+    var dim = ndx.dimension(dc.pluck("genre"));
+    var allGenres = dim.group();
+    var chart = dc.barChart("#genres-bar");
+
+    chart
+        .width(768)
+        .height(380)
+        .x(d3.scaleBand())
+        .xUnits(dc.units.ordinal)
+        .brushOn(false)
+        .xAxisLabel('Genre')
+        .yAxisLabel('Songs')
+        .dimension(dim)
+        .barPadding(0.1)
+        .outerPadding(0.05)
+        .group(allGenres);
+
+    chart.render();
+
+};
+
+// function show_genre(ndx) {
+//     var chart = dc.barChart('#genres-bar');
+
+//     d3.csv("assets/data/top2018.csv").then(function(counts) {
+//         var ndx = crossfilter(counts),
+//             genreDimension = ndx.dimension(function(d) { return d.genre; }),
+//             sumGroup = genreDimension.group().reduceSum(function(d) { return d.cnt; });
+//         chart
+//             .width(768)
+//             .height(380)
+//             .x(d3.scaleBand())
+//             .xUnits(dc.units.ordinal)
+//             .brushOn(false)
+//             .xAxisLabel('Genre')
+//             .yAxisLabel('Songs')
+//             .dimension(genreDimension)
+//             .barPadding(0.1)
+//             .outerPadding(0.05)
+//             .group(sumGroup);
+
+//         chart.render();
+//     });
+// };
+
 
 
 
