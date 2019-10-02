@@ -19,7 +19,7 @@ function makeGraphs(error, spotifyData) {
     showMode(ndx);
     topArtists(ndx);
     //show_energy_val_danceability_correlation(ndx);
-    show_genre(ndx);
+    //show_genre(ndx);
     // addXAxis(rowChart, displayText);
 }
 
@@ -141,6 +141,7 @@ function showDanceability(ndx) {
         .dimension(dim)
         .group(group)
         .elasticY(true)
+        .elasticX(true)
         .on('renderlet', function(chart) {
             chart.selectAll('rect').on('click', function(d) {
                 console.log('click!', d);
@@ -338,27 +339,27 @@ function topArtists(ndx) {
 
 //Bar Chart of Genres
 
-function show_genre(ndx) {
-    var dim = ndx.dimension(dc.pluck("genre"));
-    var allGenres = dim.group();
-    var chart = dc.barChart("#genres-bar");
+// function show_genre(ndx) {
+    //     var dim = ndx.dimension(dc.pluck("genre"));
+    //     var allGenres = dim.group();
+    //     var chart = dc.barChart("#genres-bar");
 
-    chart
-        .width(768)
-        .height(380)
-        .x(d3.scaleBand())
-        .xUnits(dc.units.ordinal)
-        .brushOn(false)
-        .xAxisLabel('Genre')
-        .yAxisLabel('Songs')
-        .dimension(dim)
-        .barPadding(0.1)
-        .outerPadding(0.05)
-        .group(allGenres);
+    //     chart
+    //         .width(768)
+    //         .height(380)
+    //         .x(d3.scaleBand())
+    //         .xUnits(dc.units.ordinal)
+    //         .brushOn(false)
+    //         .xAxisLabel('Genre')
+    //         .yAxisLabel('Songs')
+    //         .dimension(dim)
+    //         .barPadding(0.1)
+    //         .outerPadding(0.05)
+    //         .group(allGenres);
 
-    chart.render();
+    //     chart.render();
 
-};
+    // };
 
 // function show_genre(ndx) {
 //     var chart = dc.barChart('#genres-bar');

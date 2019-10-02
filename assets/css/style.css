@@ -5,13 +5,17 @@ body {
     font-weight: 500;
 }
 
-/*Navbar*/
+
+
+
+/* --------------------------------------------------------------------NAV BAR*/
 
 .navbar-brand {
     font-size: 24px!important;
 }
 
-/*Top Cards with Totals & Averages*/
+
+/* ------------------------------------------------------------------TOP CARDS*/
 
 .card {
     padding: 0;
@@ -41,17 +45,15 @@ body {
     border-color: #1DB954!important;
 }
 
-/*Artists Filter*/
+
+/* --------------------------------------------------------------ARTIST FILTER*/
 
 .filter-section {
     padding-bottom: 3.5em;
 }
 
-/*Line Charts*/
 
-.danceability-chart {
-    padding-right: 10px;
-}
+/* ----------------------------------------------------------------LINE CHARTS*/
 
 .x-axis-label {
     font-size: 20px;
@@ -61,13 +63,12 @@ body {
     font-size: 20px;
 }
 
-/*.card-body {
-    */
-    /*    padding-top: 5px;*/
-    /*}*/
+.card-body {
+    padding-top: 5px;
+}
 
 
-/*Comment Cards */
+/* ---------------------------------------------------------------COMMENT CARD*/
 
 .comment-card-line {
 
@@ -84,7 +85,7 @@ body {
     padding-top: 2em;
 }
 
-/* Pie Charts */
+/* ----------------------------------------------------------------PIE CHARTS*/
 
 .pie {
     margin: auto;
@@ -94,24 +95,23 @@ body {
     padding-top: 1.5em;
 }
 
-/*Top Artists Chart*/
+/* ----------------------------------------------------------TOP ARTISTS CHART*/
 
 .topchart {
     padding: 0;
-
 }
 
 .topArtistsChart {
     text-align: center;
 }
 
-/*Genre Chart*/
+/* ----------------------------------------------------------------GENRE CHART*/
 
 .genres {
     padding: 0;
 }
 
-/*Reset Button*/
+/* ---------------------------------------------------------------RESET BUTTON*/
 
 .reset-button {
     padding-bottom: 2em;
@@ -122,7 +122,7 @@ body {
     border-color: #1DB954!important;
 }
 
-/* Scroll to Top Button*/
+/* --------------------------------------------------------------SCROLL TO TOP*/
 
 /* This code for the back to top button was inspired by a Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
@@ -165,7 +165,7 @@ body {
 }
 
 
-/* FACT CARDS */
+/* -----------------------------------------------------------------FACT CARDS*/
 
 .factCards {
     padding-bottom: 2em;
@@ -180,7 +180,7 @@ body {
     color: black;
 }
 
-/* Footer */
+/* ---------------------------------------------------------------------FOOTER*/
 
 footer {
     background-color: #373938;
@@ -204,3 +204,12 @@ footer {
     padding-top: .2em;
     font-size: 2em;
 }
+
+/* ---------------------------------------------------------STYLING FOR TABLET*/
+
+@media (min-width:768px) {}
+
+
+/* --------------------------------------------------------STYLING FOR DESKTOP*/
+
+@media (min-width: 992px) {}
