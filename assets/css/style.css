@@ -38,7 +38,7 @@ body {
 }
 
 .border-secondary {
-    border-color: #84bd00!important;
+    border-color: #1DB954!important;
 }
 
 /*Artists Filter*/
@@ -71,7 +71,7 @@ body {
 
 .spotify-icon {
     padding-top: 5px;
-    color: #84bd00;
+    color: #1DB954;
 }
 
 .card-subtitle {
@@ -80,6 +80,10 @@ body {
 }
 
 /* Pie Charts */
+
+.pie {
+    margin: auto;
+}
 
 .pieChart {
     padding-top: 1.5em;
@@ -109,19 +113,19 @@ body {
 }
 
 .btn-outline-success {
-    color: #84bd00!important;
-    border-color: #84bd00!important;
+    color: #1DB954!important;
+    border-color: #1DB954!important;
 }
 
 /* Scroll to Top Button*/
 
 /* This code for the back to top button was inspired by a Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
-#returnButton {
+#button {
     display: inline-block;
     background-color: transparent;
-    color: #8BDC9D;
-    border: 1px solid #8BDC9D;
+    color: #DF691A;
+    border: 1px solid #DF691A;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -136,7 +140,8 @@ body {
     z-index: 97;
 }
 
-#returnButton::after {
+#button::after {
+    content: "\f077";
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
@@ -144,24 +149,34 @@ body {
     line-height: 50px;
 }
 
-#returnButton:active {
+#button:active {
     color: #ffffff;
     background-color: #DF691A;
 }
 
-#returnButton.show {
+#button.show {
     opacity: 1;
     visibility: visible;
 }
 
+
 /* FACT CARDS */
 
-.factHeading {
+.factCards {
+    padding-top: .5em;
     padding-bottom: 2em;
 }
 
-.factCards {
-    margin: 0;
+.fact-icon {
+    font-size: 2em;
+    padding: .4em;
+}
+
+.fact-lead {
+    color: black;
+}
+
+.factHeading {
     padding-bottom: 2em;
 }
 
@@ -169,8 +184,6 @@ body {
     padding-top: 1em;
     padding-bottom: 1em;
 }
-
-
 
 /* Footer */
 

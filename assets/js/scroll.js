@@ -1,6 +1,4 @@
-/* global $*/
-
-var btn = $('#returnButton');
+let btn = $('#button');
 
 $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {
@@ -11,7 +9,7 @@ $(window).scroll(function() {
     }
 });
 
-btn.on('click', function(e) {
-    e.preventDefault();
+btn.on('click', function(d) {
+    d.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, '300');
 });
