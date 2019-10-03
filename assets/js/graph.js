@@ -100,7 +100,7 @@ function showEnergy(ndx) {
     chart
         .width(500)
         .height(300)
-        // .y(d3.scale.linear().domain([0,1]))
+        // .y(d3.scale.linear().domain([0, 100]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         // .clipPadding(50)
         .brushOn(false)
@@ -193,11 +193,11 @@ function showDanceability(ndx) {
 //Pie Chart - Key
 
 function show_pie_percentage(key, endAngle, startAngle) {
-    var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
-    if (percent > 0) {
-        return key + ' ' + Math.round(percent) + '%';
+        var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
+        if (percent > 0) {
+            return key + ' ' + Math.round(percent) + '%';
+        }
     }
-}
 
 function showKey(ndx) {
     var chart = dc.pieChart("#key");
@@ -340,26 +340,26 @@ function topArtists(ndx) {
 //Bar Chart of Genres
 
 // function show_genre(ndx) {
-    //     var dim = ndx.dimension(dc.pluck("genre"));
-    //     var allGenres = dim.group();
-    //     var chart = dc.barChart("#genres-bar");
+//     var dim = ndx.dimension(dc.pluck("genre"));
+//     var allGenres = dim.group();
+//     var chart = dc.barChart("#genres-bar");
 
-    //     chart
-    //         .width(768)
-    //         .height(380)
-    //         .x(d3.scaleBand())
-    //         .xUnits(dc.units.ordinal)
-    //         .brushOn(false)
-    //         .xAxisLabel('Genre')
-    //         .yAxisLabel('Songs')
-    //         .dimension(dim)
-    //         .barPadding(0.1)
-    //         .outerPadding(0.05)
-    //         .group(allGenres);
+//     chart
+//         .width(768)
+//         .height(380)
+//         .x(d3.scaleBand())
+//         .xUnits(dc.units.ordinal)
+//         .brushOn(false)
+//         .xAxisLabel('Genre')
+//         .yAxisLabel('Songs')
+//         .dimension(dim)
+//         .barPadding(0.1)
+//         .outerPadding(0.05)
+//         .group(allGenres);
 
-    //     chart.render();
+//     chart.render();
 
-    // };
+// };
 
 // function show_genre(ndx) {
 //     var chart = dc.barChart('#genres-bar');
