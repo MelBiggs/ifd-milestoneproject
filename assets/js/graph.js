@@ -18,8 +18,8 @@ function makeGraphs(error, spotifyData) {
     showKey(ndx);
     showMode(ndx);
     topArtists(ndx);
-    //show_energy_val_danceability_correlation(ndx);
-    //show_genre(ndx);
+    show_energy_val_danceability_correlation(ndx, spotifyData);
+    show_genre(ndx);
     // addXAxis(rowChart, displayText);
 }
 
@@ -153,51 +153,62 @@ function showDanceability(ndx) {
 
 // Scatter Plot - Valence w/ Danceability and Energy
 
-// function show_energy_val_danceability_correlation(ndx) {
-//     var dim = ndx.dimension(dc.pluck('id')),
-//         grp1 = dim.group().dc.pluck('danceability'),
-//         grp2 = dim.group().dc.pluck('energy'),
-//         grp3 = dim.group().dc.pluck('valence');
+function show_energy_val_danceability_correlation(ndx, spotifyData) {
 
-//     var composite = dc.compositeChart("#energy_to_danceability_to_valence");
+    var dim1 = ndx.dimension(function(data) {
+            return parseFloat(data.danceability).toFixed(1);
+        }),
+        dim2 = ndx.dimension(function(data) {
+            return parseFloat(data.energy).toFixed(1);
+        }),
+        dim3 = ndx.dimension(function(data) {
+            return parseFloat(data.valence).toFixed(1);
+        }),
 
-//     composite
-//         .width(768)
-//         .height(480)
-//         .x(d3.scaleLinear().domain([0, 20]))
-//         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-//         .renderHorizontalGridLines(true)
-//         .compose([
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('red')
-//             .group(grp1, "Danceability")
-//             .dashStyle([2, 2]),
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('blue')
-//             .group(grp2, "Valence")
-//             .dashStyle([5, 5])
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('orange')
-//             .group(grp3, "Valence")
-//             .dashStyle([2, 2]),
-//         ])
-//         .brushOn(false)
-//         .render();
+        grp1 = dim1.group(),
+        grp2 = dim2.group(),
+        grp3 = dim3.group();
 
-// }
+    var composite = dc.compositeChart("#energy_to_danceability_to_valence");
+
+    composite
+        .width(768)
+        .height(480)
+        .x(d3.scale.linear().domain([0, 1]))
+        .yAxisLabel('count')
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+        .renderHorizontalGridLines(true)
+        .compose([
+            dc.lineChart(composite)
+            .dimension(dim1)
+            .colors('red')
+            .group(grp1, "Danceability")
+            .dashStyle([2, 2]),
+            dc.lineChart(composite)
+            .dimension(dim2)
+            .colors('blue')
+            .group(grp2, "energy")
+            .dashStyle([5, 5]),
+            dc.lineChart(composite)
+            .dimension(dim3)
+            .colors('orange')
+            .group(grp3, "Valence")
+            .dashStyle([2, 2]),
+        ])
+        .brushOn(false)
+        .render();
+
+}
 
 
 //Pie Chart - Key
 
 function show_pie_percentage(key, endAngle, startAngle) {
-        var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
-        if (percent > 0) {
-            return key + ' ' + Math.round(percent) + '%';
-        }
+    var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
+    if (percent > 0) {
+        return key + ' ' + Math.round(percent) + '%';
     }
+}
 
 function showKey(ndx) {
     var chart = dc.pieChart("#key");
@@ -361,29 +372,28 @@ function topArtists(ndx) {
 
 // };
 
-// function show_genre(ndx) {
-//     var chart = dc.barChart('#genres-bar');
+function show_genre(ndx) {
+    var chart = dc.barChart('#genres-bar');
 
-//     d3.csv("assets/data/top2018.csv").then(function(counts) {
-//         var ndx = crossfilter(counts),
-//             genreDimension = ndx.dimension(function(d) { return d.genre; }),
-//             sumGroup = genreDimension.group().reduceSum(function(d) { return d.cnt; });
-//         chart
-//             .width(768)
-//             .height(380)
-//             .x(d3.scaleBand())
-//             .xUnits(dc.units.ordinal)
-//             .brushOn(false)
-//             .xAxisLabel('Genre')
-//             .yAxisLabel('Songs')
-//             .dimension(genreDimension)
-//             .barPadding(0.1)
-//             .outerPadding(0.05)
-//             .group(sumGroup);
+    var genreDimension = ndx.dimension(function(d) { return d.genre; }),
+        sumGroup = genreDimension.group();
 
-//         chart.render();
-//     });
-// };
+    chart
+        .width(768)
+        .height(380)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .brushOn(false)
+        .xAxisLabel('Genre')
+        .yAxisLabel('Songs')
+        .dimension(genreDimension)
+        .barPadding(0.1)
+        .outerPadding(0.05)
+        .group(sumGroup);
+
+    chart.render();
+};
+
 
 
 
