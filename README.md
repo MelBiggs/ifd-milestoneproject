@@ -1,10 +1,21 @@
-# Top Spotify Songs of 2018
+[Link to Deployed Website]()
 
-This project will detail what the top Spotify songs of 2018 were, and highlight what these songs share in terms of valence, danceability, energy, loudness, tempo, keys and mode. 
+# Code Institute Milestone Project 
+## Spotify’s Top 100 Tracks of 2018 Dashboard
 
-I will use tiles to lay out what the total number of tracks and artists is. I will use a line chart, a bar chart and pie charts to represent the data. 
+The objective of this project is to create an interactive data dashboard to visualise the dataset I have chosen – the Top 100 Songs on Spotify in 2018. This dataset was published on [Kaggle]( https://www.kaggle.com/janicejung/spotify-top-100-of-2018-with-genres). The target audience are individuals who are interested in the features that exist in a popular song or musicians who want to know what it might take to make their songs more likely to be streamed. Ask yourself: what do these songs have in common and why do people like them? 
 
-I will include a filter so the user can see an individual songs information. 
+This project consists of a single-scrolling dashboard with sections that will show some totals and averages of the dataset, the affect the music has on a listener, the popularity of particular keys, modes and artists, and what the most popular genres were, along with some interesting facts about Spotify. 
+
+The first section shows the user cards containing total songs and artists are in the dataset along with the average song length. There is an option to filter by artist, which when selected will present the dynamicity of the cards above and below. 
+
+It leads on to the second section which contain line charts showing the rise of energy and danceability in the majority of songs and then shows how valence is positively correlated with danceability and energy. 
+
+After some comments, there are two interesting pie charts detailing the most common keys and mode used in the tracks. We learn that the most common key among top tracks is C♯,D♭; while D♯,E♭ is the least preferred in the Top Songs list. 
+
+It is followed then by two charts, one row chart and the other a bar chart. The first details the Top 18 Artists of 2018 and the second shows what the Top Genres of 2018 were. Below here there is an option to reset all the data back to the original layout. 
+
+To end the dashboard there are some static fact cards and a footer. The fact cards contain information about Spotify while the footer displays where the user can access the data used or to have a listen of some of these tracks themselves. 
 
 ### UX
 
