@@ -9,7 +9,7 @@ This project consists of a single-scrolling dashboard with sections that will sh
 
 The first section shows the user cards containing total songs and artists are in the dataset along with the average song length. There is an option to filter by artist, which when selected will present the dynamicity of the cards above and below. 
 
-It leads on to the second section which contain line charts showing the rise of energy and danceability in the majority of songs and then shows how valence is positively correlated with danceability and energy. 
+It leads on to the second section which contain line charts showing the rise of energy and danceability in most of the songs and then shows how valence is positively correlated with danceability and energy. 
 
 After some comments, there are two interesting pie charts detailing the most common keys and mode used in the tracks. We learn that the most common key among top tracks is C♯,D♭; while D♯,E♭ is the least preferred in the Top Songs list. 
 
@@ -17,33 +17,75 @@ It is followed then by two charts, one row chart and the other a bar chart. The 
 
 To end the dashboard there are some static fact cards and a footer. The fact cards contain information about Spotify while the footer displays where the user can access the data used or to have a listen of some of these tracks themselves. 
 
-### UX
 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+## UX
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+The main goal in the design of this project was to build a website that visualised the dataset I have chosen in an easily navigable way. I wanted to make good use of the dataset and incorporate a minimalist and modern design which I aimed to do by breaking each of the data charts up onto separate tiles. 
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+As the dataset is regarding Spotify’s most popular tracks, I wanted to implement a colour palette which mirrors that of Spotify. This involved keeping the background colours dark with white fonts and green **(#1DB954)** splashes of colour. 
+
+With this dashboard, the target audience consists of all age groups who have an interest in popular music, those who wish to know what the audio feature similarities are for these tracks and musicians who may wish to incorporate these features into their own music.
+
+### User Stories
+
+* As an individual interested in popular music, I would want to be able to use this dashboard to see what the most popular artists and tracks were of 2018 and the individual audio features that is shared among these. I would like to be able to see how different songs I may know score in terms of energy, danceability, valence, key, mode and genre. 
+
+* As a user who wishes to know what makes up a Top 100 song, I would like to be able to see the breakdown of audio features, and how some of these interact. I want to see the similarities and differences of the features of the entire Top 100. Filtering down to one song, I want to be able to be able to see specifically want the make up of that song is. 
+
+* As a musician or producer who wishes to release music that has a better chance of generating attention, I would like to be able to see what kind of formula popularly streamed music may have. Is the music generally in a major chord? What key do people seem to prefer? Should it be a dance song?
+
+* As a user who may be of an older demographic, I want a website which is easily navigated so that I can move through the webpage with ease.
+
+* As a user who may be of a young demographic, I want the information to be laid out in a way that is understandable in order to make the most of the data present. 
+
+* As a user I would prefer the option to reset the chosen filters to avoid having to individually remove each of the filters myself. 
 
 ### Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
+## Features
 ### Existing Features
+My dashboard consists of the following features: 
 
-Bootswatch Slate template
-Logo from https://logohub.io/
-Favicon from https://favicon.io/emoji-favicons/headphone/
+* **Navbar**: The navbar contains the name of the project.
 
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+* **Dynamic Information Cards**: The three initial cards contain the total songs, total artists and average song length of the Top 100 tracks of 2018. These are dynamic and change depending on the selections made by the user. 
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+* **Artist filter**: This feature allows the user to filter the data according to a specific artist.
 
-Features Left to Implement
-Another feature idea
+* **Line Charts**: Two line charts show the analysis of tracks by their energy and danceability.
+
+* **Scatter plot**:  A scatter plot incorporates the energy and danceability features with valence to show how these all relate to each other. 
+
+* **Comment card**: A comment card puts the data represented into words in case a user is not accustomed to reading data from a chart. 
+
+* **Pie Charts**: Two pie charts show an analysis of the frequency of particular keys and modes used in the music. These can be clicked-on to recalculate the results.
+
+* **Row Chart**: A row chart shows who the Top 18 Artists are in the dataset. This is dynamic and changes depending on the selections made by the user.
+
+* **Bar Chart**: The top 6 genres of the year are displayed with a bar chart. Clicking on one of these affects the other charts. 
+
+* **Reset Button**: This feature that enables users to reset all their selection.
+
+* **Fact Cards with Links**: Three cards with interesting facts about Spotify are listed at the end of the page. The icons contain links to the sources of these facts. 
+
+* **Footer**: A footer at the end contains a link to the dataset and a link to Spotify’s main page. 
+
+* **Responsive**: This dashboard has been made responsive so it allows the user to access this page through their mobile, tablet or desktop and have a pleasant user experience each time.
+
+### Features Left to Implement
+
+In the future, I would like to add more features to this dashboard, such as:
+
+Adding more datasets for other years, incorporating this data with the 2018 dataset and documenting how the data has changed. 
+
+### Another feature idea
+
+I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it in the page. 
+
+
+
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
@@ -84,3 +126,7 @@ Media
 The photos used in this site were obtained from ...
 Acknowledgements
 I received inspiration for this project from X
+
+Bootswatch Slate template
+Logo from https://logohub.io/
+Favicon from https://favicon.io/emoji-favicons/headphone/

@@ -187,7 +187,7 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
             dc.lineChart(composite)
             .dimension(dim2)
             .colors('blue')
-            .group(grp2, "energy")
+            .group(grp2, "Energy")
             .dashStyle([5, 5]),
             dc.lineChart(composite)
             .dimension(dim3)
@@ -350,28 +350,6 @@ function topArtists(ndx) {
 
 //Bar Chart of Genres
 
-// function show_genre(ndx) {
-//     var dim = ndx.dimension(dc.pluck("genre"));
-//     var allGenres = dim.group();
-//     var chart = dc.barChart("#genres-bar");
-
-//     chart
-//         .width(768)
-//         .height(380)
-//         .x(d3.scaleBand())
-//         .xUnits(dc.units.ordinal)
-//         .brushOn(false)
-//         .xAxisLabel('Genre')
-//         .yAxisLabel('Songs')
-//         .dimension(dim)
-//         .barPadding(0.1)
-//         .outerPadding(0.05)
-//         .group(allGenres);
-
-//     chart.render();
-
-// };
-
 function show_genre(ndx) {
     var chart = dc.barChart('#genres-bar');
 
@@ -396,43 +374,6 @@ function show_genre(ndx) {
 
 
 
-
-
-// function show_energy_val_danceability_correlation(ndx) {
-//     var dim = ndx.dimension(dc.pluck('')),
-//         grp1 = dim.group().dc.pluck('danceability'),
-//         grp2 = dim.group().dc.pluck('energy'),
-//         grp3 = dim.group().dc.pluck('valence');
-
-//     var composite = dc.compositeChart("#energy_to_danceability_to_valence");
-
-//     composite
-//         .width(768)
-//         .height(480)
-//         .x(d3.scaleLinear().domain([0, 20]))
-//         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-//         .renderHorizontalGridLines(true)
-//         .compose([
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('red')
-//             .group(grp1, "Danceability")
-//             .dashStyle([2, 2]),
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('blue')
-//             .group(grp2, "Valence")
-//             .dashStyle([5, 5])
-//             dc.lineChart(composite)
-//             .dimension(dim)
-//             .colors('orange')
-//             .group(grp3, "Valence")
-//             .dashStyle([2, 2]),
-//         ])
-//         .brushOn(false)
-//         .render();
-
-// }
 
 
 
