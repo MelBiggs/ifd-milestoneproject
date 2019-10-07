@@ -376,12 +376,30 @@ function topArtists(ndx) {
         .elasticX(true)
         //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
         .data(function(group) { return group.top(18); });
+    // chart.svg()
+    // .append("text")
+    // .attr("class", "Number of Times in the Top 100")
+    // .attr("text-anchor", "middle")
+    // .attr("x", chart.width() / 2)
+    // .attr("y", chart.height() - 3.5)
+    // .text(displayText);
     // chart.select("svg")
     // .attr("height", "100%")
     // .attr("width", "100%")
     // .attr("viewBox", "0 0 500 400");
 
     chart.render();
+
+    // function addXAxis(rowChart, displayText) {
+    //     rowChart.svg()
+    //         .append("text")
+    //         .attr("class", "Number of Times in the Top 100")
+    //         .attr("text-anchor", "middle")
+    //         .attr("x", rowChart.width() / 2)
+    //         .attr("y", rowChart.height() - 3.5)
+    //         .text(displayText);
+    // }
+    // AddXAxis(chart1, "This is the x-axis!");
 };
 
 //Bar Chart of Genres
@@ -397,16 +415,20 @@ function show_genre(ndx) {
         .height(380)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
-        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
+        .margins({ top: 10, right: 50, bottom: 50, left: 50 })
         .useViewBoxResizing(true)
         .colors(d3.scale.ordinal().range(["#1DB954"]))
         .brushOn(false)
         .xAxisLabel('Genre')
-        .yAxisLabel('Songs')
+        .yAxisLabel('Number of Songs')
         .dimension(genreDimension)
         .barPadding(0.1)
         .outerPadding(0.05)
-        .group(sumGroup);
+        .group(sumGroup)
+    chart.select("svg")
+        .attr("height", "100%")
+        .attr("width", "100%")
+        .attr("viewBox", "0 0 680 380");;
 
     chart.render();
 };

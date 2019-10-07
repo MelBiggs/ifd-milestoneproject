@@ -5,6 +5,10 @@ body {
     font-weight: 500;
 }
 
+dc-chart {
+    padding-left: 1em;
+}
+
 y-label {
     padding-left: 1em;
 }
@@ -58,11 +62,11 @@ y-label {
 /* ----------------------------------------------------------------LINE CHARTS*/
 
 .x-axis-label {
-    font-size: .8em;
+    font-size: 15px;
 }
 
 .y-axis-label {
-    font-size: .8em;
+    font-size: 15px;
 }
 
 .valence-chart {
@@ -131,8 +135,9 @@ energy_to_danceability_to_valence {
 
 /* ----------------------------------------------------------------GENRE CHART*/
 
-.genres {
-    padding: 0;
+.top-genres {
+    padding-bottom: 1em;
+    padding-left: 1em;
 }
 
 /* ---------------------------------------------------------------RESET BUTTON*/
