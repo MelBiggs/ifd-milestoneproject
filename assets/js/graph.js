@@ -23,7 +23,7 @@ function makeGraphs(error, spotifyData) {
     // addXAxis(rowChart, displayText);
 }
 
-// Function to get total songs
+//                          FUNCTION TO GET TOTAL SONGS
 
 function totalSongs(ndx) {
     var dim = ndx.dimension(dc.pluck("name"));
@@ -31,7 +31,7 @@ function totalSongs(ndx) {
     $("#all-songs").text(individualSongs);
 }
 
-// Function to get total artists
+//                          FUNCTION TO GET TOTAL ARTISTS
 
 function totalArtists(ndx) {
     // Select the artists
@@ -42,7 +42,7 @@ function totalArtists(ndx) {
     $("#unique-artists").text(uniqueArtists);
 }
 
-// Function to get average song length 
+//                          FUNCTION TO GET AVERAGE SONG LENGTH
 
 function averageSongLength(ndx) {
     var dim = ndx.dimension(dc.pluck("duration_ms"));
@@ -60,13 +60,15 @@ function averageSongLength(ndx) {
     $("#AverageLengthCard").text(averageMins);
 };
 
+//                          FUNCTION TO CHANGE MILLISECONDS TO MINUTES & SECONDS
+
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-//Filter for Artists 
+//                          FILTER TO GET ARTISTS
 
 function showSongFilter(ndx) {
     let dim = ndx.dimension(dc.pluck("artists"));
@@ -85,7 +87,7 @@ function showSongFilter(ndx) {
         .render();
 }
 
-//Line Chart - Energy
+//                          LINE CHART - ENERGY
 
 function showEnergy(ndx) {
     var chart = dc.lineChart("#energy");
@@ -122,7 +124,7 @@ function showEnergy(ndx) {
     chart.render();
 }
 
-// Line Chart - Danceability
+//                          LINE CHART - DANCEABILITY
 
 function showDanceability(ndx) {
     var chart = dc.lineChart("#danceability");
@@ -161,7 +163,7 @@ function showDanceability(ndx) {
     chart.render();
 }
 
-// Scatter Plot - Valence w/ Danceability and Energy
+//                          SCATTER PLOT WITH VALENCE
 
 function show_energy_val_danceability_correlation(ndx, spotifyData) {
 
@@ -219,7 +221,7 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
 
 
 
-//Pie Chart - Key
+//                          PIE CHART - KEY
 
 function show_pie_percentage(key, endAngle, startAngle) {
     var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
@@ -307,7 +309,7 @@ function transformKey(key) {
     return keyString;
 }
 
-//Pie Chart - Mode
+//                          PIE CHART - MODE
 
 function showMode(ndx) {
     var chart = dc.pieChart("#mode");
@@ -358,7 +360,7 @@ function transformMode(mode) {
     return modeString;
 }
 
-//Row Chart of Top 18 Artists 
+//                          ROW CHART - TOP 18 ARTISTS
 
 function topArtists(ndx) {
     var dim = ndx.dimension(dc.pluck("artists"));
@@ -402,7 +404,7 @@ function topArtists(ndx) {
     // AddXAxis(chart1, "This is the x-axis!");
 };
 
-//Bar Chart of Genres
+//                          BAR CHART - TOP GENRES
 
 function show_genre(ndx) {
     var chart = dc.barChart('#genres-bar');
