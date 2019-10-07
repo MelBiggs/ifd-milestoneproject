@@ -79,8 +79,8 @@
     <section>
         <div class="filter-section col-xl-12 px-2 mt-3">
             <div class="row filter">
-                <div class="col-xl-12 d-flex justify-content-center selector-label">Filter by Artist:</div>
-                <div class="col-xl-12 mt-2 d-flex justify-content-center">
+                <div class="col-xl-12 col-sm-12 d-flex justify-content-center selector-label">Filter by Artist:</div>
+                <div class="col-xl-12 col-sm-12 mt-2 d-flex justify-content-center">
                     <div id="artist-selection"></div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
 
                 <!-- ENERGY OF SONGS -->
 
-                <div class="col-xs-12 col-lg-6">
+                <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="card text-white bg-primary box">
                         <div class="card-header">Energy of the music</div>
                         <div class="card-body d-flex justify-content-center px-4">
@@ -106,8 +106,8 @@
 
                 <!-- DANCEABILITY OF SONGS -->
 
-                <div class="col-xs-12 col-lg-6">
-                    <div class="card text-white bg-secondary box">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="card text-white bg-primary box">
                         <div class="card-header">Danceability of the music</div>
                         <div class="card-body d-flex justify-content-center">
                             <div id="danceability"></div>
@@ -123,11 +123,11 @@
         <!--SCATTER PLOT WITH CORRELATION BETWEEN VALENCE & ENERGY & DANCEABILITY -->
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-lg-12">
-                    <div class="card bg-light mb-3">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-10">
+                    <div class="card bg-secondary mb-3">
                         <div class="card-header text-white valence-chart">Is a song's valence linked to it's danceability & energy?</div>
-                        <div class="card-body d-flex justify-content-center ">
+                        <div class="card-body d-flex justify-content-center">
                             <div id="energy_to_danceability_to_valence"></div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
 
         <div class="container-fluid comment-card-line ">
             <div class="row justify-content-center">
-                <div class="card col-xs-8 col-lg-8 ">
+                <div class="card col-sm-12 col-md-12 col-lg-10 ">
                     <div class="card-body ">
                         <h6 class="card-subtitle text-muted ">A number of musical features are used by Spotify to describe a song.<br> For the Top 100 songs of 2018, let’s look at their energy, danceability and valence. Spotify measures energy from from 0.0 to 1.0 and represents a perceptual
                             measure of intensity and activity. An energetic track will feel loud, fast and noisy. Death metal, for example, has high energy while a Bach prelude will have low energy.<br>Danceability is measure by how suitable a track is
@@ -160,13 +160,13 @@
     <section>
         <div class="container-fluid pie">
             <div class="row ">
-                <div class="card bg-light col-xs-12 col-lg-6 key-chart">
+                <div class="card bg-light col-sm-12 col-md-6 col-lg-6 key-chart">
                     <!--<div class="card bg-light col-xs-12 col-lg-6 key-chart">-->
                     <div class="card-header text-white">Key of Songs</div>
                     <div class="card-body pieChart justify-content-center" id="key">
                     </div>
                 </div>
-                <div class="card bg-light col-xs-12 col-lg-6 mode-chart">
+                <div class="card bg-light col-sm-12 col-md-6 col-lg-6">
                     <div class="card-header text-white">Mode of Songs</div>
                     <div class="card-body pieChart justify-content-center" id="mode">
                     </div>
@@ -183,7 +183,7 @@
     <section>
         <div class="container-fluid topchart">
             <div class="row justify-content-center">
-                <div class="card border-light mb-3 col-xs-12 col-md-12 col-lg-10 ">
+                <div class="card border-light mb-3 col-sm-12 col-md-12 col-lg-10 ">
                     <div class="card-header text-white">Top 18 Artists of 2018</div>
                     <div class="card-body" id="topArtistsChart">
                     </div>
@@ -197,7 +197,7 @@
     <section>
         <div class="container-fluid genres">
             <div class="row justify-content-center">
-                <div class="card border-light mb-3 col-xs-12 col-md-12 col-lg-10 ">
+                <div class="card border-light mb-3 col-sm-12 col-md-12 col-lg-10 ">
                     <div class="card-header text-white">Top Genres of 2018</div>
                     <div class="card-body" id="genres-bar">
                     </div>

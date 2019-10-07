@@ -97,17 +97,16 @@ function showEnergy(ndx) {
 
     console.log(group);
 
-    chart
-        .width(500)
+    chart.width(400)
         .height(300)
-        .y(d3.scale.linear().domain([0, 30]))
         .x(d3.scale.linear().domain([0.30, 1.00]))
         //.clipPadding(50)
-        // .useViewBoxResizing(true)
+        .useViewBoxResizing(true)
         .brushOn(false)
         .colors(['rgb(29,185,84)'])
         .xAxisLabel("Energy Level")
-        .margins({ top: 10, right: 50, bottom: 75, left: 80 })
+        .yAxisLabel("Song Count")
+        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
         .dimension(dim)
         .group(group)
         .elasticY(true)
@@ -115,6 +114,10 @@ function showEnergy(ndx) {
             chart.selectAll('rect').on('click', function(d) {
                 console.log('click!', d);
             });
+            chart.select("svg")
+                .attr("height", "100%")
+                .attr("width", "100%")
+                .attr("viewBox", "0 0 400 300");
         });
     chart.render();
 }
@@ -132,13 +135,15 @@ function showDanceability(ndx) {
 
     console.log(group);
 
-    chart.width(430)
+    chart.width(400)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
+        .useViewBoxResizing(true)
         .brushOn(false)
         .colors(['rgb(29,185,84)'])
         .xAxisLabel("Danceability")
-        .margins({ top: 10, right: 2, bottom: 75, left: 80 })
+        .yAxisLabel("Song Count")
+        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
         .dimension(dim)
         .group(group)
         .elasticY(true)
@@ -147,6 +152,10 @@ function showDanceability(ndx) {
             chart.selectAll('rect').on('click', function(d) {
                 console.log('click!', d);
             });
+            chart.select("svg")
+                .attr("height", "100%")
+                .attr("width", "100%")
+                .attr("viewBox", "0 0 400 300");
         });
 
     chart.render();
@@ -170,36 +179,44 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
         grp2 = dim2.group(),
         grp3 = dim3.group();
 
-    var composite = dc.compositeChart("#energy_to_danceability_to_valence");
+    var chart = dc.compositeChart("#energy_to_danceability_to_valence");
 
-    composite
-        .width(768)
-        .height(480)
+    chart
+        .width(520)
+        .height(600)
         .x(d3.scale.linear().domain([0, 1]))
-        .yAxisLabel('count')
+        // .useViewBoxResizing(true)
+        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
+        .yAxisLabel('Song Count')
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
+        .elasticY(true)
+        .elasticX(true)
         .compose([
-            dc.lineChart(composite)
+            dc.lineChart(chart)
             .dimension(dim1)
             .colors('#1DB954')
             .group(grp1, "Danceability")
             .dashStyle([2, 2]),
-            dc.lineChart(composite)
+            dc.lineChart(chart)
             .dimension(dim2)
-            .colors('#191414')
+            .colors('#FFFFFF')
             .group(grp2, "Energy")
             .dashStyle([5, 5]),
-            dc.lineChart(composite)
+            dc.lineChart(chart)
             .dimension(dim3)
             .colors('#FE0101')
             .group(grp3, "Valence")
             .dashStyle([2, 2]),
         ])
         .brushOn(false)
-        .render();
-
+    chart.select("svg")
+        .attr("height", "100%")
+        .attr("width", "100%")
+        .attr("viewBox", "0 0 520 600")
+    chart.render();
 }
+
 
 
 //Pie Chart - Key
@@ -234,6 +251,10 @@ function showKey(ndx) {
             chart.selectAll('text.pie-slice').text(function(d) {
                 return show_pie_percentage(d.data.key, d.endAngle, d.startAngle);
             });
+            chart.select("svg")
+                .attr("height", "100%")
+                .attr("width", "100%")
+                .attr("viewBox", "0 0 535 400")
         })
 
     chart.render();
@@ -300,9 +321,10 @@ function showMode(ndx) {
 
     // Create the chart
     chart
-        .width(470)
-        .height(400)
+        .width(430)
+        .height(330)
         .innerRadius(60)
+        .useViewBoxResizing(true)
         .colors(d3.scale.ordinal().range(["#1DB954", "#191414"]))
         .dimension(modeDimension)
         .group(group)
@@ -311,6 +333,10 @@ function showMode(ndx) {
             chart.selectAll('text.pie-slice').text(function(d) {
                 return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100)) + '%';
             });
+            chart.select("svg")
+                .attr("height", "100%")
+                .attr("width", "100%")
+                .attr("viewBox", "0 0 435 350")
         });
 
     chart.render();
@@ -340,12 +366,20 @@ function topArtists(ndx) {
     var chart = dc.rowChart("#topArtistsChart");
 
     chart
-        .width(768)
-        .height(480)
+        .width(600)
+        .height(500)
         .dimension(dim)
         .group(allArtists)
+        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
+        //.xAxisLabel("Number of Songs")
+        .useViewBoxResizing(true)
+        .elasticX(true)
         //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
         .data(function(group) { return group.top(18); });
+    // chart.select("svg")
+    // .attr("height", "100%")
+    // .attr("width", "100%")
+    // .attr("viewBox", "0 0 500 400");
 
     chart.render();
 };
@@ -359,10 +393,12 @@ function show_genre(ndx) {
         sumGroup = genreDimension.group();
 
     chart
-        .width(768)
+        .width(680)
         .height(380)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
+        .useViewBoxResizing(true)
         .colors(d3.scale.ordinal().range(["#1DB954"]))
         .brushOn(false)
         .xAxisLabel('Genre')

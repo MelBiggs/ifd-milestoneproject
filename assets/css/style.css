@@ -5,7 +5,9 @@ body {
     font-weight: 500;
 }
 
-
+y-label {
+    padding-left: 1em;
+}
 
 
 /* --------------------------------------------------------------------NAV BAR*/
@@ -56,16 +58,37 @@ body {
 /* ----------------------------------------------------------------LINE CHARTS*/
 
 .x-axis-label {
-    font-size: 20px;
+    font-size: .8em;
+}
+
+.y-axis-label {
+    font-size: .8em;
 }
 
 .valence-chart {
     font-size: 20px;
 }
 
-.card-body {
-    padding-top: 5px;
+energy {
+    margin: auto;
+    float: left;
 }
+
+energy_to_danceability_to_valence {
+    margin: auto;
+}
+
+/*.dc-legend {
+    */
+
+/*    fill: white;*/
+
+/*}*/
+
+.chart-body {
+    size: auto
+}
+
 
 
 /* ---------------------------------------------------------------COMMENT CARD*/
@@ -94,6 +117,7 @@ body {
 .pieChart {
     padding-top: 1.5em;
 }
+
 
 /* ----------------------------------------------------------TOP ARTISTS CHART*/
 
@@ -204,6 +228,27 @@ footer {
     padding-top: .2em;
     font-size: 2em;
 }
+
+/* -------------------------------------------------------------RESPONSIVENESS*/
+
+/*#energy,
+*/
+
+/*#danceability {*/
+
+/*    height: 500px;*/
+
+/*    width: 450px;*/
+
+/*}*/
+
+/*#energy_to_danceability_to_valence {*/
+
+/*    height: 650px;*/
+
+/*    width: 650px;*/
+
+/*}*/
 
 /* ---------------------------------------------------------STYLING FOR TABLET*/
 
