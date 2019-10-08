@@ -18,8 +18,25 @@ y-label {
     padding-left: 1em;
 }
 
+/* ---------------------------------------------------------------------LOADER*/
 
+/*#loader {*/
 
+/*    background: url('assets/images/favicon-32x32.png') no-repeat center center;*/
+
+/*    position: absolute;*/
+
+/*    top: 0;*/
+
+/*    left: 0;*/
+
+/*    height: 100%;*/
+
+/*    width: 100%;*/
+
+/*    z-index: 9999999;*/
+
+/*}*/
 
 /* --------------------------------------------------------------------NAV BAR*/
 
@@ -100,13 +117,10 @@ energy_to_danceability_to_valence {
     size: auto
 }
 
-
-
 /* ---------------------------------------------------------------COMMENT CARD*/
 
 .comment-card-line {
-
-    margin-bottom: 10px;
+    margin-bottom: 1em;
 }
 
 .spotify-icon {
@@ -160,46 +174,219 @@ energy_to_danceability_to_valence {
 
 /* --------------------------------------------------------------SCROLL TO TOP*/
 
+/*#return-to-top {*/
+
+/*    position: fixed;*/
+
+/*    bottom: 20px;*/
+
+/*    right: 20px;*/
+
+/*    background: rgb(0, 0, 0);*/
+
+/*    background: rgba(0, 0, 0, 0.7);*/
+
+/*    width: 50px;*/
+
+/*    height: 50px;*/
+
+/*    display: block;*/
+
+/*    text-decoration: none;*/
+
+/*    -webkit-border-radius: 35px;*/
+
+/*    -moz-border-radius: 35px;*/
+
+/*    border-radius: 35px;*/
+
+/*    -webkit-transition: all 0.3s linear;*/
+
+/*    -moz-transition: all 0.3s ease;*/
+
+/*    -ms-transition: all 0.3s ease;*/
+
+/*    -o-transition: all 0.3s ease;*/
+
+/*    transition: all 0.3s ease;*/
+
+/*}*/
+
+/*#return-to-top i {*/
+
+/*    color: #fff;*/
+
+/*    margin: 0;*/
+
+/*    position: relative;*/
+
+/*    left: 16px;*/
+
+/*    top: 13px;*/
+
+/*    font-size: 19px;*/
+
+/*    -webkit-transition: all 0.3s ease;*/
+
+/*    -moz-transition: all 0.3s ease;*/
+
+/*    -ms-transition: all 0.3s ease;*/
+
+/*    -o-transition: all 0.3s ease;*/
+
+/*    transition: all 0.3s ease;*/
+
+/*}*/
+
+/*#return-to-top:hover {*/
+
+/*    background: rgba(0, 0, 0, 0.9);*/
+
+/*}*/
+
+/*#return-to-top:hover i {*/
+
+/*    color: #fff;*/
+
+/*    top: 5px;*/
+
+/*}
+
+*/
+
+/*#myBtn {*/
+
+/*    display: none;*/
+
+/* Hidden by default */
+
+/*    position: fixed;*/
+
+/* Fixed/sticky position */
+
+/*    bottom: 20px;*/
+
+/* Place the button at the bottom of the page */
+
+/*    right: 30px;*/
+
+/* Place the button 30px from the right */
+
+/*    z-index: 99;*/
+
+/* Make sure it does not overlap */
+
+/*    border: none;*/
+
+/* Remove borders */
+
+/*    outline: none;*/
+
+/* Remove outline */
+
+/*    background-color: #1DB954;*/
+
+/* Set a background color */
+
+/*    color: white;*/
+
+/* Text color */
+
+/*    cursor: pointer;*/
+
+/* Add a mouse pointer on hover */
+
+/*    padding: 15px;*/
+
+/* Some padding */
+
+/*    border-radius: 10px;*/
+
+/* Rounded corners */
+
+/*    font-size: 18px;*/
+
+/* Increase font size */
+
+/*}*/
+
+/*#myBtn:hover {*/
+
+/*    background-color: #555;*/
+
+/* Add a dark-grey background on hover */
+
+/*}*/
+
 /* This code for the back to top button was inspired by a Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
-#button {
-    display: inline-block;
-    background-color: transparent;
-    color: #DF691A;
-    border: 1px solid #DF691A;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    border-radius: 3px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: background-color .3s,
-    opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 97;
-}
+/*#button {*/
 
-#button::after {
-    content: "\f077";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2em;
-    line-height: 50px;
-}
+/*    display: inline-block;*/
 
-#button:active {
-    color: #ffffff;
-    background-color: #DF691A;
-}
+/*    background-color: transparent;*/
 
-#button.show {
-    opacity: 1;
-    visibility: visible;
-}
+/*    color: #DF691A;*/
 
+/*    border: 1px solid #DF691A;*/
+
+/*    width: 50px;*/
+
+/*    height: 50px;*/
+
+/*    text-align: center;*/
+
+/*    border-radius: 3px;*/
+
+/*    position: fixed;*/
+
+/*    bottom: 30px;*/
+
+/*    right: 30px;*/
+
+/*    transition: background-color .3s,*/
+
+/*    opacity .5s, visibility .5s;*/
+
+/*    opacity: 0;*/
+
+/*    visibility: hidden;*/
+
+/*    z-index: 97;*/
+
+/*}*/
+
+/*#button::after {*/
+
+/*    content: "\f077";*/
+
+/*    font-family: FontAwesome;*/
+
+/*    font-weight: normal;*/
+
+/*    font-style: normal;*/
+
+/*    font-size: 2em;*/
+
+/*    line-height: 50px;*/
+
+/*}*/
+
+/*#button:active {*/
+
+/*    color: #ffffff;*/
+
+/*    background-color: #DF691A;*/
+
+/*}*/
+
+/*#button.show {*/
+
+/*    opacity: 1;*/
+
+/*    visibility: visible;*/
+
+/*}*/
 
 /* -----------------------------------------------------------------FACT CARDS*/
 
@@ -214,6 +401,15 @@ energy_to_danceability_to_valence {
 
 .fact-lead {
     color: black;
+}
+
+/* ---------------------------------------------------------------------FILTER*/
+
+#artist-selection select {
+    background: #aaa;
+    border: black;
+    color: #32383e;
+    font-size: 1rem;
 }
 
 /* ---------------------------------------------------------------------FOOTER*/

@@ -20,16 +20,18 @@ function makeGraphs(error, spotifyData) {
     topArtists(ndx);
     show_energy_val_danceability_correlation(ndx, spotifyData);
     show_genre(ndx);
-    // addXAxis(rowChart, displayText);
 }
 
 //                          FUNCTION TO GET TOTAL SONGS
+
+// Inspiration for this code was found at https://stackoverflow.com/questions/43126076/dc-js-numberdisplay-with-crossfilter-get-total-records
 
 function totalSongs(ndx) {
     var totalSongsND = dc.numberDisplay("#all-songs");
     var dim = ndx.dimension(dc.pluck("name"));
     var allSongs = dim.groupAll();
     totalSongsND.group(allSongs).valueAccessor(x => x);
+    //.parseFloat(n.toFixed(4));;
 
     totalSongsND.render();
 }
@@ -43,17 +45,27 @@ function totalSongs(ndx) {
 //                          FUNCTION TO GET TOTAL ARTISTS
 
 
+// function totalArtists(ndx) {
+//     // Select the artists
+//     var totalArtistsND = dc.numberDisplay("#unique-artists");
+//     // Count them
+//     var dim = ndx.dimension(dc.pluck("artists"));
+//     var uniqueArtist = dim.groupAll();
+//     totalArtistsND.group(uniqueArtist).valueAccessor(x => x);
+
+//     totalArtistsND.render();
+// }
+
 function totalArtists(ndx) {
     // Select the artists
-    var totalArtistsND = dc.numberDisplay("#unique-artists");
-    // Count them
     var dim = ndx.dimension(dc.pluck("artists"));
-    var uniqueArtist = dim.groupAll();
-    totalArtistsND.group(uniqueArtist).valueAccessor(x => x);
-
-    totalArtistsND.render();
+    // Count them
+    var uniqueArtists = dim.group().all().length;
+    // Use jQuery to display the value on the page
+    $("#unique-artists").text(uniqueArtists);
 }
 
+//                          FUNCTION TO GET AVERAGE SONG LENGTH
 
 function averageSongLength(ndx) {
     var averageCount = dc.numberDisplay("#AverageLengthCard");
@@ -83,32 +95,22 @@ function averageSongLength(ndx) {
 
     averageCount.render();
 }
-// function totalArtists(ndx) {
-//     // Select the artists
-//     var dim = ndx.dimension(dc.pluck("artists"));
+
+// function averageSongLength(ndx) {
+//     var dim = ndx.dimension(dc.pluck("duration_ms"));
 //     // Count them
-//     var uniqueArtists = dim.group().all().length;
-//     // Use jQuery to display the value on the page
-//     $("#unique-artists").text(uniqueArtists);
-// }
+//     var songLengths = dim.group().all();
+//     var songCount = songLengths.length;
 
-//                          FUNCTION TO GET AVERAGE SONG LENGTH
+//     var summedLength = 0;
 
-function averageSongLength1(ndx) {
-    var dim = ndx.dimension(dc.pluck("duration_ms"));
-    // Count them
-    var songLengths = dim.group().all();
-    var songCount = songLengths.length;
-
-    var summedLength = 0;
-
-    songLengths.forEach(function(songLength) {
-        summedLength += parseFloat(songLength.key);
-    });
-    var avg = summedLength / songCount;
-    var averageMins = millisToMinutesAndSeconds(avg);
-    $("#AverageLengthCard").text(averageMins);
-};
+//     songLengths.forEach(function(songLength) {
+//         summedLength += parseFloat(songLength.key);
+//     });
+//     var avg = summedLength / songCount;
+//     var averageMins = millisToMinutesAndSeconds(avg);
+//     $("#AverageLengthCard").text(averageMins);
+// };
 
 //                          FUNCTION TO CHANGE MILLISECONDS TO MINUTES & SECONDS
 
@@ -237,13 +239,12 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
         .width(520)
         .height(600)
         .x(d3.scale.linear().domain([0, 1]))
-        // .useViewBoxResizing(true)
         .margins({ top: 10, right: 50, bottom: 75, left: 50 })
         .yAxisLabel('Song Count')
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
+        //.useViewBoxResizing(true)
         .elasticY(true)
-        .elasticX(true)
         .compose([
             dc.lineChart(chart)
             .dimension(dim1)
@@ -265,11 +266,10 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
     chart.select("svg")
         .attr("height", "100%")
         .attr("width", "100%")
-        .attr("viewBox", "0 0 520 600")
+        .attr("viewBox", "0 0 520 600");
+
     chart.render();
 }
-
-
 
 //                          PIE CHART - KEY
 
@@ -390,7 +390,6 @@ function showMode(ndx) {
                 .attr("width", "100%")
                 .attr("viewBox", "0 0 435 350")
         });
-
     chart.render();
 }
 
@@ -418,7 +417,7 @@ function topArtists(ndx) {
     var chart = dc.rowChart("#topArtistsChart");
 
     chart
-        .width(600)
+        .width(850)
         .height(530)
         .dimension(dim)
         .group(allArtists)
@@ -427,17 +426,10 @@ function topArtists(ndx) {
         .elasticX(true)
         //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
         .data(function(group) { return group.top(18); });
-    // chart.svg()
-    // .append("text")
-    // .attr("class", "Number of Times in the Top 100")
-    // .attr("text-anchor", "middle")
-    // .attr("x", chart.width() / 2)
-    // .attr("y", chart.height() - 3.5)
-    // .text(displayText);
     // chart.select("svg")
-    // .attr("height", "100%")
-    // .attr("width", "100%")
-    // .attr("viewBox", "0 0 500 400");
+    //     .attr("height", "100%")
+    //     .attr("width", "100%")
+    //     .attr("viewBox", "0 0 500 400");
 
     chart.render();
 
@@ -477,80 +469,18 @@ function show_genre(ndx) {
         .dimension(genreDimension)
         .barPadding(0.1)
         .outerPadding(0.05)
-        .group(sumGroup)
+        .group(sumGroup);
     chart.select("svg")
         .attr("height", "100%")
         .attr("width", "100%")
-        .attr("viewBox", "0 0 680 380");;
+        .attr("viewBox", "0 0 680 380");
 
     chart.render();
-};
-
-
-
-
-
-
-// // Scatter plot
-
-// function show_energy_to_danceability_correlation(ndx) {
-//     var energyDim = ndx.dimension(dc.pluck("energy"));
-//     var danceDim = ndx.dimension(function(d) {
-//         return [d.energy, d.danceability];
-//     });
-//     var danceGroup = danceDim.group();
-//     var minEnergy = energyDim.bottom(1)[0].energy;
-//     var maxEnergy = energyDim.top(1)[0].energy;
-
-//     dc.scatterPlot("#energy_to_danceability")
-//         .width(500)
-//         .height(350)
-//         .x(d3.scale.linear().domain([minEnergy, maxEnergy]))
-//         .brushOn(true)
-//         .symbolSize(6)
-//         .clipPadding(10)
-//         //.yAxisLabel("Danceability")
-//         // .title(function(d) {
-//         //     return "Danceability"
-//         .dimension(danceDim)
-//         .group(danceGroup);
-//     .margins({ top: 10, right: 50, bottom: 75, left: 75 });
-
-// }
-
-// function addXAxis(rowChart, displayText) {
-//     rowChart.svg()
-//         .append("text")
-//         .attr("class", "Number of Times in the Top 100")
-//         .attr("text-anchor", "middle")
-//         .attr("x", rowChart.width() / 2)
-//         .attr("y", rowChart.height() - 3.5)
-//         .text(displayText);
-// }
-// AddXAxis(chart1, "This is the x-axis!");
-
-
-
-
-
-//Trying to make cards dynamic 
-
-function totalSongs(ndx) {
-    var totalSongsND = dc.numberDisplay("#all-songs");
-    var dim = ndx.dimension(dc.pluck("name"));
-    var allSongs = dim.groupAll();
-
-    totalSongsND.group(allSongs).valueAccessor(x => x);
-
-    totalSongsND.render();
 }
 
 
+// //   LOADER
 
-// function totalSongs()
-// var all = ndx.groupAll();
-
-
-// dc.dataCount('#all-songs')
-//     .crossfilter(ndx)
-//     .groupAll(all);
+// $(window).load(function() {
+//     $('#').addClass('hide');
+// });

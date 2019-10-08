@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Top Spotify Tracks of 2018</title>
 
-    <link rel="shortcut icon" type="image/png" href="assets/favicon/favicon-32x32.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon-32x32.png" />
     <link rel="stylesheet" href="assets/css/libraries/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/libraries/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,8 +25,15 @@
 
 <body>
 
+    <!-- LOADER -->
+
+    <!--<div class="loader"></div>-->
+
     <!-- RETURN TO TOP BUTTON -->
-    <a id="button"></a>
+
+    <!--<div class="loader"><i class="icon-arrow-down"></i></div>-->
+
+    <!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 
     <!-- NAVBAR -->
 
@@ -80,7 +87,7 @@
         <div class="filter-section col-xl-12 px-2 mt-3">
             <div class="row filter">
                 <div class="col-xl-12 col-sm-12 d-flex justify-content-center selector-label">Filter by Artist:</div>
-                <div class="col-xl-12 col-sm-12 mt-2 d-flex justify-content-center">
+                <div class="col-xl-12 col-sm-12 col-md-12 mt-2 d-flex justify-content-center">
                     <div id="artist-selection"></div>
                 </div>
             </div>
@@ -159,14 +166,14 @@
 
     <section>
         <div class="container-fluid pie">
-            <div class="row ">
-                <div class="card bg-light col-sm-12 col-md-6 col-lg-6 key-chart">
+            <div class="row justify-content-md-center">
+                <div class="card bg-light col-sm-12 col-md-6 col-lg-5">
                     <!--<div class="card bg-light col-xs-12 col-lg-6 key-chart">-->
                     <div class="card-header text-white">Key of Songs</div>
                     <div class="card-body pieChart justify-content-center" id="key">
                     </div>
                 </div>
-                <div class="card bg-light col-sm-12 col-md-6 col-lg-6">
+                <div class="card bg-light col-sm-12 col-md-6 col-lg-5">
                     <div class="card-header text-white">Mode of Songs</div>
                     <div class="card-body pieChart justify-content-center" id="mode">
                     </div>
