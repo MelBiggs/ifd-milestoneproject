@@ -7,11 +7,18 @@ body {
 
 dc-chart {
     padding-left: 1em;
+    text-align: center!important;
+}
+
+div.dc-chart {
+    float: none;
 }
 
 y-label {
     padding-left: 1em;
 }
+
+
 
 
 /* --------------------------------------------------------------------NAV BAR*/
