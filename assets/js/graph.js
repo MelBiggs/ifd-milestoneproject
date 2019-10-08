@@ -151,7 +151,7 @@ function showEnergy(ndx) {
 
     console.log(group);
 
-    chart.width(400)
+    chart.width(300)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         //.clipPadding(50)
@@ -171,7 +171,7 @@ function showEnergy(ndx) {
             chart.select("svg")
                 .attr("height", "100%")
                 .attr("width", "100%")
-                .attr("viewBox", "0 0 400 300");
+                .attr("viewBox", "0 0 300 300");
         });
     chart.render();
 }
@@ -189,7 +189,7 @@ function showDanceability(ndx) {
 
     console.log(group);
 
-    chart.width(400)
+    chart.width(300)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
         .useViewBoxResizing(true)
@@ -209,7 +209,7 @@ function showDanceability(ndx) {
             chart.select("svg")
                 .attr("height", "100%")
                 .attr("width", "100%")
-                .attr("viewBox", "0 0 400 300");
+                .attr("viewBox", "0 0 300 300");
         });
 
     chart.render();
