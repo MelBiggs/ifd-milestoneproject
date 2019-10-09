@@ -1,4 +1,4 @@
-[Link to Deployed Website]()
+[Link to Deployed Website](https://melbiggs.github.io/ifd-milestoneproject/)
 
 # Code Institute Milestone Project 
 ## Spotify’s Top 100 Tracks of 2018 Dashboard
@@ -79,12 +79,8 @@ My dashboard consists of the following features:
 In the future, I would like to add more features to this dashboard, such as:
 
 Adding more datasets for other years, incorporating this data with the 2018 dataset and documenting how the data has changed. 
-
 ### Another feature idea
-
 I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it in the page. 
-
-
 
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
