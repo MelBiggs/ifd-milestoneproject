@@ -82,11 +82,11 @@ function averageSongLength(ndx) {
         function(p, v) {
             p.count--;
             p.total -= parseFloat(v.duration_ms);
-            p.avg = p.total / p.count
+            p.avg = p.total / p.count;
             return p;
         },
         function() { return { count: 0, total: 0, avg: 0 }; }
-    );;
+    );
 
     averageCount.group(allSongs).valueAccessor(function(data) {
         console.log(data.avg);
@@ -262,7 +262,7 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
             .group(grp3, "Valence")
             .dashStyle([2, 2]),
         ])
-        .brushOn(false)
+        .brushOn(false);
     chart.select("svg")
         .attr("height", "100%")
         .attr("width", "100%")
@@ -306,8 +306,8 @@ function showKey(ndx) {
             chart.select("svg")
                 .attr("height", "100%")
                 .attr("width", "100%")
-                .attr("viewBox", "0 0 535 400")
-        })
+                .attr("viewBox", "0 0 535 400");
+        });
 
     chart.render();
 }
@@ -388,7 +388,7 @@ function showMode(ndx) {
             chart.select("svg")
                 .attr("height", "100%")
                 .attr("width", "100%")
-                .attr("viewBox", "0 0 435 350")
+                .attr("viewBox", "0 0 435 350");
         });
     chart.render();
 }

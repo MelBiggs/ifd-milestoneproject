@@ -118,10 +118,6 @@ energy_to_danceability_to_valence {
 
 /*}*/
 
-.chart-body {
-    size: auto
-}
-
 /* ---------------------------------------------------------------COMMENT CARD*/
 
 .comment-card-line {
@@ -467,10 +463,14 @@ footer {
 
 @media (max-width: 575px) {
     .navbar-brand {
-        font-size: 1em!important;
+        font-size: 1.2em!important;
     }
     .fact-header-listeners {
         font-size: 1em;
+    }
+    .card-header {
+        font-size: 15px;
+        text-align: center;
     }
 }
 
