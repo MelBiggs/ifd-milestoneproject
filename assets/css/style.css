@@ -256,13 +256,10 @@ footer {
 
 /*}*/
 
-/*#energy_to_danceability_to_valence {*/
-
-/*    height: 650px;*/
-
-/*    width: 650px;*/
-
-/*}*/
+#energy_to_danceability_to_valence {
+    height: 80%;
+    width: 80%;
+}
 
 /* ---------------------------------------------------------STYLING FOR MOBILE*/
 

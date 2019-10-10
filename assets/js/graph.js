@@ -31,9 +31,8 @@ function totalSongs(ndx) {
     var dim = ndx.dimension(dc.pluck("name"));
     var allSongs = dim.groupAll();
     totalSongsND.group(allSongs).valueAccessor(x => x);
-    //.parseFloat(n.toFixed(4));;
 
-    totalSongsND.render();
+    totalSongsND.formatNumber(d3.format('s')).render();
 }
 
 // function totalSongs(ndx) {
@@ -238,12 +237,12 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
     chart
         .width(520)
         .height(600)
+        .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([0, 1]))
         .margins({ top: 10, right: 50, bottom: 75, left: 50 })
         .yAxisLabel('Song Count')
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
-        //.useViewBoxResizing(true)
         .elasticY(true)
         .compose([
             dc.lineChart(chart)
@@ -478,6 +477,9 @@ function show_genre(ndx) {
     chart.render();
 }
 
+// $(window).resize(function() {
+//     dc.renderAll();
+// });
 
 // //   LOADER
 
