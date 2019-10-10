@@ -40,9 +40,10 @@ With this dashboard, the target audience consists of all age groups who have an 
 
 * As a user I would prefer the option to reset the chosen filters to avoid having to individually remove each of the filters myself. 
 
-### Features
+## Wireframes
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+[Here is a link to my wireframe](/UXD/Wireframe.pdf)
+
 
 ## Features
 ### Existing Features
