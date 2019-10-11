@@ -26,6 +26,8 @@ As the dataset is regarding Spotify’s most popular tracks, I wanted to impleme
 
 With this dashboard, the target audience consists of all age groups who have an interest in popular music, those who wish to know what the audio feature similarities are for these tracks and musicians who may wish to incorporate these features into their own music.
 
+[Here is a link to my UXD document](UXD/UXD.pdf)
+
 ### User Stories
 
 * As an individual interested in popular music, I would want to be able to use this dashboard to see what the most popular artists and tracks were of 2018 and the individual audio features that is shared among these. I would like to be able to see how different songs I may know score in terms of energy, danceability, valence, key, mode and genre. 
@@ -80,6 +82,7 @@ My dashboard consists of the following features:
 In the future, I would like to add more features to this dashboard, such as:
 
 Adding more datasets for other years, incorporating this data with the 2018 dataset and documenting how the data has changed. 
+
 ### Another feature idea
 I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it in the page. 
 
