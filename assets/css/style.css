@@ -245,20 +245,18 @@ footer {
 
 /* -------------------------------------------------------------RESPONSIVENESS*/
 
-/*#energy,
-*/
-
-/*#danceability {*/
-
-/*    height: 500px;*/
-
-/*    width: 450px;*/
-
-/*}*/
-
 #energy_to_danceability_to_valence {
-    height: 80%;
-    width: 80%;
+    height: 70%;
+    width: 50%;
+}
+
+#topArtistsChart {
+    width: 90%;
+}
+
+#energy,
+#danceability {
+    width: 50%;
 }
 
 /* ---------------------------------------------------------STYLING FOR MOBILE*/
@@ -273,6 +271,10 @@ footer {
     .card-header {
         font-size: 15px;
         text-align: center;
+    }
+    #energy,
+    #danceability {
+        width: 100%;
     }
 }
 
@@ -296,6 +298,10 @@ footer {
     }
     h3 {
         font-size: .9em;
+    }
+    #energy,
+    #danceability {
+        width: 50%;
     }
 }
 

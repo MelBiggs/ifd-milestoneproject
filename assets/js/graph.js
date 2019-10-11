@@ -239,7 +239,7 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
         .height(600)
         .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([0, 1]))
-        .margins({ top: 10, right: 50, bottom: 75, left: 50 })
+        .margins({ top: 10, right: 30, bottom: 50, left: 30 })
         .yAxisLabel('Song Count')
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
@@ -420,7 +420,7 @@ function topArtists(ndx) {
         .height(530)
         .dimension(dim)
         .group(allArtists)
-        .margins({ top: 10, right: 50, bottom: 55, left: 50 })
+        .margins({ top: 10, right: 0, bottom: 55, left: 80 })
         .useViewBoxResizing(true)
         .elasticX(true)
         //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 

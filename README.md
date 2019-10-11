@@ -32,7 +32,7 @@ With this dashboard, the target audience consists of all age groups who have an 
 
 * As an individual interested in popular music, I would want to be able to use this dashboard to see what the most popular artists and tracks were of 2018 and the individual audio features that is shared among these. I would like to be able to see how different songs I may know score in terms of energy, danceability, valence, key, mode and genre. 
 
-* As a user who wishes to know what makes up a Top 100 song, I would like to be able to see the breakdown of audio features, and how some of these interact. I want to see the similarities and differences of the features of the entire Top 100. Filtering down to one song, I want to be able to be able to see specifically want the make up of that song is. 
+* As a user who wishes to know what makes up a Top 100 song, such as a music technician, I would like to be able to see the breakdown of audio features, and how some of these interact. I want to see the similarities and differences of the features of the entire Top 100. Filtering down to one song, I want to be able to be able to see specifically want the make up of that song is. 
 
 * As a musician or producer who wishes to release music that has a better chance of generating attention, I would like to be able to see what kind of formula popularly streamed music may have. Is the music generally in a major chord? What key do people seem to prefer? Should it be a dance song?
 
@@ -86,47 +86,109 @@ Adding more datasets for other years, incorporating this data with the 2018 data
 ### Another feature idea
 I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it in the page. 
 
-Technologies Used
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+## Technologies Used
 
-JQuery
+### Programming Languages 
+
+[HTML](https://en.wikipedia.org/wiki/HTML)
+HTML was used to control the layout and the structure of the dashboard.
+
+[CSS - Language](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
+
+[Javascript]( https://www.javascript.com/)
+Javascript was used to introduce the interactive elements to the project. 
+
+### Frameworks 
+
+[Bootstrap 4.0](https://getbootstrap.com/)
+Bootstrap is a very useful CSS Framework. You can save time writing code by using the Bootstrap predefined design templates. It has a great grid system and is responsive to different screen resolutions.
+
+### Libraries 
+
+[Crossfilter]( http://square.github.io/crossfilter/)
+Crossfilter is a library used to create dimensions and groups for the charts in my project. 
+
+[DC.js and DC.css]( https://dc-js.github.io/dc.js/) 
+DC.js is a javascript charting library with Crossfilter support, which allowed me to explore my dataset through its library of prebuilt chart types. 
+
+[DC.js and DC.css]( https://d3js.org)
+The D3.js library allowed me to edit the charts found in the DC.js library.
+
+[Queue.js]( https://github.com/d3/d3-queue)
+Queue.js enabled me to bind the dataset to the charts.
+
+[JQuery](https://jquery.com/)
 The project uses JQuery to simplify DOM manipulation.
-Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+[Bootswatch]( https://bootswatch.com/slate/)
+The project uses the theme ‘Slate’ from Bootswatch to set its colour theme. 
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+[Cloud9]( https://aws.amazon.com/cloud9/
+Cloud9 is the code editor I used to write the HTML and CSS.
 
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+[FontAwesome](https://fontawesome.com/)
+Font Awesome is a great library of icons. I used this library for my link icons.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+[Google Fonts](https://fonts.google.com/)
+There is a great selection of fonts in the Google Fonts library, some of which I used in my project. 
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+## Testing
+* As an individual interested in popular music, I believe they will reach their intended goal. They can navigate the page and find out the audio features of their choice of the top 70 artists along with how many songs they have in the Top 100. They can follow the links for more information and read the comment card to have the charts explained. I manually tested each of the links to the band's social media accounts and each of these opened on a separate tab (due to using 'target="_blank"') to the correct destination.
+* 
+* As a musician or producer who wishes to release music that has a better chance of generating attention or a user who wishes to know what makes up a Top 100 song, they can also see the energy, danceability, valence and genre that are prevalent in the Top 100. They can see what artist is most popular. They’ll see that the majority of the songs have high energy and danceability, they are relatively positive-sounding and that Hip-Hop/Rap and Pop are the most popular genres.
+* 
+*As a user of an older age, I want it to be as easily navigated as possible and attractive on a desktop or tablet. Younger users may more regularly use their phone and while the dashboard is best on a larger screen size, I believe my project allows the user to achieve their goals in an easy, straightforward and pleasant way. On different screen sizes and browsers, the project looks good.
 
-### Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+There was a bug with the valence, energy and danceability correlation chart. It would not respond to efforts to make it responsive. Using `< useViewBoxResizing(true)>` didn’t throw an error but the chart would not appear in its card. That issue was resolved by adding `< #energy_to_danceability_to_valence{ height: 70%; width: 50%; }>` to the style sheet. It is now responsive and shrinks with the screen. 
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+### Code Validation
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+#### CSS
+I validated my CSS code using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). This showed no errors.
 
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
+#### HTML
+I validated my CSS code using [W3C Markup Validation Service]( https://validator.w3.org/). This helped me to spot any small mistakes to the code and to clean it up. It warned me that my sections lack a heading but I have decided that it is appropriate to ignore this warning. 
 
-Bootswatch Slate template
-Logo from https://logohub.io/
-Favicon from https://favicon.io/emoji-favicons/headphone/
+#### JavaScript
+The JavaScript code in my project was validated using  [JSHint]( https://jshint.com/). This was really useful in identifying any extra semicolons that I may have missed and for cleaning my code. 
+
+### Jasmine
+Xxxxxxxxxxxxxxxxxxxxx
+Xxxxxxxxxxxxxxxxxxx
+Xxxxxxxxxxxxxxxxxxxxxxx
+
+### Responsiveness
+I tested the responsiveness of the webpage on Chrome, Microsoft Edge and XXXXXX
+
+### Peer Code Review
+XXXXXXXXXXXXXXXXXXXXXXXXX
+
+## Deployment
+
+### Deployment onto GitHub
+1. The git repository was initiated by inputting the command `<git init>` into the terminal 
+2. I then used `<git add>` to add the files to the staging area before using the `<git commit -m "Description of work done">` command to commit the files.
+3. I created a repository on GitHub and linked to it by using command `<git remote add origin https://github.com/MelBiggs/ifd-milestoneproject.git>`
+4. I could then push my files into GitHub by using `<git push>`
+5. To publish my site using GitHub Pages, I navigated to my GitHub Pages site's repository.
+6. Under my repository name, I clicked Settings.
+7. I scrolled down to the GitHub Pages section and used the Select source drop-down menu to select 'master' as my GitHub Pages publishing source.
+8. Click save. 
+To summarise, this site is hosted using GitHub pages, deployed directly from the master branch and the deployed site will update automatically upon new commits to the master branch. 
+To run locally, you can clone this repository directly into the editor of your choice by pasting `<git clone https://github.com/MelBiggs/ifd-milestoneproject.git>` into your terminal. To cut ties with this GitHub repository, type `<git remote rm origin>` into the terminal.
+
+## Credits
+
+### Content
+The dataset I used was downloaded from [Kaggle]( https://www.kaggle.com/janicejung/spotify-top-100-of-2018-with-genres).
+
+### Media
+The favicon I used was found on [favicon.io](https://favicon.io/emoji-favicons/)
+
+### Acknowledgements
+I received inspiration for the theme of this project from [Spotify]( https://www.spotify.com/ie/).  
+
+I received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
+
+I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute Slack users for their helpful comments and suggestions on my project. 
