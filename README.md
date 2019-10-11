@@ -93,7 +93,7 @@ I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it i
 [HTML](https://en.wikipedia.org/wiki/HTML)
 HTML was used to control the layout and the structure of the dashboard.
 
-[CSS - Language](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
 
 [Javascript]( https://www.javascript.com/)
@@ -124,7 +124,7 @@ The project uses JQuery to simplify DOM manipulation.
 [Bootswatch]( https://bootswatch.com/slate/)
 The project uses the theme ‘Slate’ from Bootswatch to set its colour theme. 
 
-[Cloud9]( https://aws.amazon.com/cloud9/
+[Cloud9](https://aws.amazon.com/cloud9/)
 Cloud9 is the code editor I used to write the HTML and CSS.
 
 [FontAwesome](https://fontawesome.com/)
@@ -135,12 +135,12 @@ There is a great selection of fonts in the Google Fonts library, some of which I
 
 ## Testing
 * As an individual interested in popular music, I believe they will reach their intended goal. They can navigate the page and find out the audio features of their choice of the top 70 artists along with how many songs they have in the Top 100. They can follow the links for more information and read the comment card to have the charts explained. I manually tested each of the links to the band's social media accounts and each of these opened on a separate tab (due to using 'target="_blank"') to the correct destination.
-* 
-* As a musician or producer who wishes to release music that has a better chance of generating attention or a user who wishes to know what makes up a Top 100 song, they can also see the energy, danceability, valence and genre that are prevalent in the Top 100. They can see what artist is most popular. They’ll see that the majority of the songs have high energy and danceability, they are relatively positive-sounding and that Hip-Hop/Rap and Pop are the most popular genres.
-* 
-*As a user of an older age, I want it to be as easily navigated as possible and attractive on a desktop or tablet. Younger users may more regularly use their phone and while the dashboard is best on a larger screen size, I believe my project allows the user to achieve their goals in an easy, straightforward and pleasant way. On different screen sizes and browsers, the project looks good.
 
-There was a bug with the valence, energy and danceability correlation chart. It would not respond to efforts to make it responsive. Using `< useViewBoxResizing(true)>` didn’t throw an error but the chart would not appear in its card. That issue was resolved by adding `< #energy_to_danceability_to_valence{ height: 70%; width: 50%; }>` to the style sheet. It is now responsive and shrinks with the screen. 
+* As a musician or producer who wishes to release music that has a better chance of generating attention or a user who wishes to know what makes up a Top 100 song, they can also see the energy, danceability, valence and genre that are prevalent in the Top 100. They can see what artist is most popular. They’ll see that the majority of the songs have high energy and danceability, they are relatively positive-sounding and that Hip-Hop/Rap and Pop are the most popular genres.
+
+* As a user of an older age, I want it to be as easily navigated as possible and attractive on a desktop or tablet. Younger users may more regularly use their phone and while the dashboard is best on a larger screen size, I believe my project allows the user to achieve their goals in an easy, straightforward and pleasant way. On different screen sizes and browsers, the project looks good.
+
+There was a bug with the valence, energy and danceability correlation chart. It would not respond to efforts to make it responsive. Using `< .useViewBoxResizing(true)>` didn’t throw an error but the chart would not appear in its card. That issue was resolved by adding `< #energy_to_danceability_to_valence{ height: 70%; width: 50%; }>` to the style sheet. It is now responsive and shrinks with the screen. 
 
 ### Code Validation
 
