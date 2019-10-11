@@ -192,3 +192,5 @@ I received inspiration for the theme of this project from [Spotify]( https://www
 I received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
 
 I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute Slack users for their helpful comments and suggestions on my project. 
+
+[Link to Deployed Website](https://melbiggs.github.io/ifd-milestoneproject/)
