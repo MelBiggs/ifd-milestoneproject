@@ -92,7 +92,7 @@ function averageSongLength(ndx) {
         return data.avg ? millisToMinutesAndSeconds(data.avg) : 0;
     }).formatNumber(d3.format(".2"));
 
-    averageCount.render();
+    averageCount.formatNumber(d3.format('')).render();
 }
 
 // function averageSongLength(ndx) {

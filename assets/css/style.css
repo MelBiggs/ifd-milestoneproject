@@ -3,6 +3,7 @@
 body,
 html {
     overflow-x: hidden;
+    z-index: 2;
 }
 
 body {
@@ -162,7 +163,7 @@ y-label {
 
 .go-top {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     bottom: 2em;
     right: 2em;
     text-decoration: none;

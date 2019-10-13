@@ -16,5 +16,5 @@ $(window).scroll(function() {
 $('.go-top').click(function(event) {
     event.preventDefault();
 
-    $('html, body,').animate({ scrollTop: 0 }, '300');
+    $('html, body').animate({ scrollTop: 0 }, '300');
 });
