@@ -22,6 +22,8 @@ function makeGraphs(error, spotifyData) {
     show_genre(ndx);
 }
 
+//const spotifyData = d3.csvParse(d3.select('pre#data').text());
+
 //                          FUNCTION TO GET TOTAL SONGS
 
 // Inspiration for this code was found at https://stackoverflow.com/questions/43126076/dc-js-numberdisplay-with-crossfilter-get-total-records
@@ -35,33 +37,27 @@ function totalSongs(ndx) {
     totalSongsND.formatNumber(d3.format('s')).render();
 }
 
-// function totalSongs(ndx) {
-//     var dim = ndx.dimension(dc.pluck("name"));
-//     var individualSongs = dim.group().all().length;
-//     $("#all-songs").text(individualSongs);
-// }
-
 //                          FUNCTION TO GET TOTAL ARTISTS
 
+// The code for this function was figured out from a question I asked on Stack Overflow: https://stackoverflow.com/questions/58321985/how-to-get-dynamic-field-count-in-dc-js-numberdisplay/58343323#58343323
 
-// function totalArtists(ndx) {
-//     // Select the artists
-//     var totalArtistsND = dc.numberDisplay("#unique-artists");
-//     // Count them
-//     var dim = ndx.dimension(dc.pluck("artists"));
-//     var uniqueArtist = dim.groupAll();
-//     totalArtistsND.group(uniqueArtist).valueAccessor(x => x);
-
-//     totalArtistsND.render();
-// }
+function unique_count_groupall(group) {
+    return {
+        value: function() {
+            return group.all().length;
+        }
+    };
+}
 
 function totalArtists(ndx) {
     // Select the artists
-    var dim = ndx.dimension(dc.pluck("artists"));
+    var totalArtistsND = dc.numberDisplay("#unique-artists");
     // Count them
-    var uniqueArtists = dim.group().all().length;
-    // Use jQuery to display the value on the page
-    $("#unique-artists").text(uniqueArtists);
+    var dim = ndx.dimension(dc.pluck("artists"));
+    var uniqueArtist = unique_count_groupall(dim.group());
+    totalArtistsND.group(uniqueArtist).valueAccessor(x => x);
+
+    totalArtistsND.render();
 }
 
 //                          FUNCTION TO GET AVERAGE SONG LENGTH
@@ -95,23 +91,9 @@ function averageSongLength(ndx) {
     averageCount.formatNumber(d3.format('')).render();
 }
 
-// function averageSongLength(ndx) {
-//     var dim = ndx.dimension(dc.pluck("duration_ms"));
-//     // Count them
-//     var songLengths = dim.group().all();
-//     var songCount = songLengths.length;
-
-//     var summedLength = 0;
-
-//     songLengths.forEach(function(songLength) {
-//         summedLength += parseFloat(songLength.key);
-//     });
-//     var avg = summedLength / songCount;
-//     var averageMins = millisToMinutesAndSeconds(avg);
-//     $("#AverageLengthCard").text(averageMins);
-// };
-
 //                          FUNCTION TO CHANGE MILLISECONDS TO MINUTES & SECONDS
+
+// The Code for this solution was found at https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
 
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
@@ -153,7 +135,6 @@ function showEnergy(ndx) {
     chart.width(300)
         .height(300)
         .x(d3.scale.linear().domain([0.30, 1.00]))
-        //.clipPadding(50)
         .useViewBoxResizing(true)
         .brushOn(false)
         .colors(['rgb(29,185,84)'])
@@ -289,7 +270,6 @@ function showKey(ndx) {
 
     var group = keyDimension.group();
 
-    // Create the chart
     chart
         .width(535)
         .height(400)
@@ -360,6 +340,13 @@ function transformKey(key) {
 
 //                          PIE CHART - MODE
 
+function show_mode_percentage(key, endAngle, startAngle) {
+    var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
+    if (percent > 0) {
+        return key + ' ' + Math.round(percent) + '%';
+    }
+}
+
 function showMode(ndx) {
     var chart = dc.pieChart("#mode");
 
@@ -370,7 +357,6 @@ function showMode(ndx) {
 
     var group = modeDimension.group();
 
-    // Create the chart
     chart
         .width(430)
         .height(330)
@@ -382,7 +368,7 @@ function showMode(ndx) {
         .legend(dc.legend())
         .on('pretransition', function(chart) {
             chart.selectAll('text.pie-slice').text(function(d) {
-                return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100)) + '%';
+                return show_mode_percentage(d.data.key, d.endAngle, d.startAngle);
             });
             chart.select("svg")
                 .attr("height", "100%")
@@ -425,10 +411,6 @@ function topArtists(ndx) {
         .elasticX(true)
         //We only want to get the top 18 artists on the chart, these are the artists with more than 2 Top 100 songs 
         .data(function(group) { return group.top(18); });
-    // chart.select("svg")
-    //     .attr("height", "100%")
-    //     .attr("width", "100%")
-    //     .attr("viewBox", "0 0 500 400");
 
     chart.render();
 
@@ -476,10 +458,6 @@ function show_genre(ndx) {
 
     chart.render();
 }
-
-// $(window).resize(function() {
-//     dc.renderAll();
-// });
 
 // //   LOADER
 
