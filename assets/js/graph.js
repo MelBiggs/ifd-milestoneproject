@@ -2,6 +2,8 @@
 /* global dc*/
 /* global d3*/
 
+$("#loading").show();
+
 queue()
     .defer(d3.csv, "assets/data/top2018.csv")
     .await(makeGraphs);
@@ -20,6 +22,9 @@ function makeGraphs(error, spotifyData) {
     topArtists(ndx);
     show_energy_val_danceability_correlation(ndx, spotifyData);
     show_genre(ndx);
+
+    $("#loading").hide();
+
 }
 
 //const spotifyData = d3.csvParse(d3.select('pre#data').text());

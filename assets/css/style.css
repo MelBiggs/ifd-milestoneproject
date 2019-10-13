@@ -26,30 +26,84 @@ y-label {
 
 /* ---------------------------------------------------------------------LOADER*/
 
-/*#loader {*/
+/* The code for the loader was found at https://codepen.io/judecodes/pen/PrBOvG?&page=1 and https://www.loginradius.com/engineering/create-a-loading-spinner-using-css/ */
 
-/*    background: url('assets/images/favicon-32x32.png') no-repeat center center;*/
+.loading {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
-/*    position: absolute;*/
+}
 
-/*    top: 0;*/
+.loader {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-top: 2px solid #1DB954;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    animation: spin 3s linear infinite forwards;
+    margin: auto;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
-/*    left: 0;*/
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border-top: 2px solid #1DB954;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
 
-/*    height: 100%;*/
+.loader::before {
+    top: 7px;
+    left: 7px;
+    width: 178px;
+    height: 178px;
+    border-top: 2px solid #FFFFFF;
+    animation: spin 2s linear infinite forwards;
+}
 
-/*    width: 100%;*/
+.loader::after {
+    top: 16px;
+    left: 16px;
+    width: 160px;
+    height: 160px;
+    border-top: 2px solid #32383e;
+    animation: spin 1s linear infinite forwards;
+}
 
-/*    z-index: 9999999;*/
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-/*}*/
+#loading {
+    z-index: 98;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+}
 
 /* --------------------------------------------------------------------NAV BAR*/
 
 .navbar-brand {
     font-size: 1.5em!important;
 }
-
 
 /* ------------------------------------------------------------------TOP CARDS*/
 
@@ -87,7 +141,6 @@ y-label {
 .filter-section {
     padding-bottom: 3.5em;
 }
-
 
 /* ----------------------------------------------------------------LINE CHARTS*/
 
