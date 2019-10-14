@@ -1,5 +1,7 @@
 [Link to Deployed Website](https://melbiggs.github.io/ifd-milestoneproject/)
 
+![](assets/images/page.gif)
+
 # Code Institute Milestone Project 
 ## Spotify’s Top 100 Tracks of 2018 Dashboard
 
