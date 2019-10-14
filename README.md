@@ -92,52 +92,52 @@ I would like to add in a Top Tracks of 2018 playlist from Spotify and embed it i
 
 ### Programming Languages 
 
-[HTML](https://en.wikipedia.org/wiki/HTML)
+[HTML](https://en.wikipedia.org/wiki/HTML) -
 HTML was used to control the layout and the structure of the dashboard.
 
-[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) -
 Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
 
-[Javascript]( https://www.javascript.com/)
+[Javascript]( https://www.javascript.com/) - 
 Javascript was used to introduce the interactive elements to the project. 
 
 ### Frameworks 
 
-[Bootstrap 4.0](https://getbootstrap.com/)
+[Bootstrap 4.0](https://getbootstrap.com/) - 
 Bootstrap is a very useful CSS Framework. You can save time writing code by using the Bootstrap predefined design templates. It has a great grid system and is responsive to different screen resolutions.
 
 ### Libraries 
 
-[Crossfilter]( http://square.github.io/crossfilter/)
+[Crossfilter]( http://square.github.io/crossfilter/) - 
 Crossfilter is a library used to create dimensions and groups for the charts in my project. 
 
-[DC.js and DC.css]( https://dc-js.github.io/dc.js/) 
+[DC.js and DC.css]( https://dc-js.github.io/dc.js/) - 
 DC.js is a javascript charting library with Crossfilter support, which allowed me to explore my dataset through its library of prebuilt chart types. 
 
-[DC.js and DC.css]( https://d3js.org)
+[DC.js and DC.css]( https://d3js.org) - 
 The D3.js library allowed me to edit the charts found in the DC.js library.
 
-[Queue.js]( https://github.com/d3/d3-queue)
+[Queue.js]( https://github.com/d3/d3-queue) - 
 Queue.js enabled me to bind the dataset to the charts.
 
-[JQuery](https://jquery.com/)
+[JQuery](https://jquery.com/) - 
 The project uses JQuery to simplify DOM manipulation.
 
-[Bootswatch]( https://bootswatch.com/slate/)
+[Bootswatch]( https://bootswatch.com/slate/) - 
 The project uses the theme ‘Slate’ from Bootswatch to set its colour theme. 
 
-[Cloud9](https://aws.amazon.com/cloud9/)
+[Cloud9](https://aws.amazon.com/cloud9/) - 
 Cloud9 is the code editor I used to write the HTML and CSS.
 
-[FontAwesome](https://fontawesome.com/)
+[FontAwesome](https://fontawesome.com/) - 
 Font Awesome is a great library of icons. I used this library for my link icons.
 
-[Google Fonts](https://fonts.google.com/)
+[Google Fonts](https://fonts.google.com/) - 
 There is a great selection of fonts in the Google Fonts library, some of which I used in my project. 
 
 ### Also
 
-[Gifox](https://gifox.io/)
+[Gifox](https://gifox.io/) - 
 I used Gifox to record the website demo for my README file. I recorded it off the website [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fmelbiggs.github.io%2Fifd-milestoneproject%2F#)
 
 ## Testing
@@ -161,7 +161,7 @@ I validated my CSS code using [W3C Markup Validation Service]( https://validator
 The JavaScript code in my project was validated using  [JSHint]( https://jshint.com/). This was really useful in identifying any extra semicolons that I may have missed and for cleaning my code. 
 
 ### Jasmine
-When researching whether to test my code with Jasmine, I was told that it was not necessary as it is from the DC.js library. However I have three helper functions, `<millisToMinutesAndSeconds>`, `<transformKey>` and `<transformMode>`
+When researching whether to test my code with Jasmine, I was told that it was not necessary as it is from the DC.js library. However I have three helper functions, `<millisToMinutesAndSeconds>`, `<transformKey>` and `<transformMode>`. I could use Jasmine to test these functions. 
 
 ### Responsiveness
 I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
