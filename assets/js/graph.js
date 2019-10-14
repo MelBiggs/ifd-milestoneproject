@@ -463,9 +463,3 @@ function show_genre(ndx) {
 
     chart.render();
 }
-
-// //   LOADER
-
-// $(window).load(function() {
-//     $('#').addClass('hide');
-// });

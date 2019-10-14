@@ -1,6 +1,6 @@
-[Link to Deployed Website](https://melbiggs.github.io/ifd-milestoneproject/)
-
 ![](assets/images/page.gif)
+
+[Link to Deployed Website](https://melbiggs.github.io/ifd-milestoneproject/)
 
 # Code Institute Milestone Project 
 ## Spotify’s Top 100 Tracks of 2018 Dashboard
@@ -135,6 +135,11 @@ Font Awesome is a great library of icons. I used this library for my link icons.
 [Google Fonts](https://fonts.google.com/)
 There is a great selection of fonts in the Google Fonts library, some of which I used in my project. 
 
+### Also
+
+[Gifox](https://gifox.io/)
+I used Gifox to record the website demo for my README file. I recorded it off the website [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fmelbiggs.github.io%2Fifd-milestoneproject%2F#)
+
 ## Testing
 * As an individual interested in popular music, I believe they will reach their intended goal. They can navigate the page and find out the audio features of their choice of the top 70 artists along with how many songs they have in the Top 100. They can follow the links for more information and read the comment card to have the charts explained. I manually tested each of the links to the band's social media accounts and each of these opened on a separate tab (due to using 'target="_blank"') to the correct destination.
 
@@ -156,12 +161,10 @@ I validated my CSS code using [W3C Markup Validation Service]( https://validator
 The JavaScript code in my project was validated using  [JSHint]( https://jshint.com/). This was really useful in identifying any extra semicolons that I may have missed and for cleaning my code. 
 
 ### Jasmine
-Xxxxxxxxxxxxxxxxxxxxx
-Xxxxxxxxxxxxxxxxxxx
-Xxxxxxxxxxxxxxxxxxxxxxx
+When researching whether to test my code with Jasmine, I was told that it was not necessary as it is from the DC.js library. However I have three helper functions, `<millisToMinutesAndSeconds>`, `<transformKey>` and `<transformMode>`
 
 ### Responsiveness
-I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page worked per
+I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
 
 ### Peer Code Review
 XXXXXXXXXXXXXXXXXXXXXXXXX
