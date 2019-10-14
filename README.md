@@ -159,7 +159,7 @@ Xxxxxxxxxxxxxxxxxxx
 Xxxxxxxxxxxxxxxxxxxxxxx
 
 ### Responsiveness
-I tested the responsiveness of the webpage on Chrome, Microsoft Edge and XXXXXX
+I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page worked per
 
 ### Peer Code Review
 XXXXXXXXXXXXXXXXXXXXXXXXX

@@ -233,7 +233,7 @@ function show_energy_val_danceability_correlation(ndx, spotifyData) {
         .compose([
             dc.lineChart(chart)
             .dimension(dim1)
-            .colors('#1DB954')
+            .colors('#000000')
             .group(grp1, "Danceability")
             .dashStyle([2, 2]),
             dc.lineChart(chart)
