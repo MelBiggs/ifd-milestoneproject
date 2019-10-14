@@ -94,11 +94,12 @@ function averageSongLength(ndx) {
     }).formatNumber(d3.format(".2"));
 
     averageCount.formatNumber(d3.format('')).render();
+    //averageCount.(d3.time.format('%M:%SZ"')).render();
 }
 
 //                          FUNCTION TO CHANGE MILLISECONDS TO MINUTES & SECONDS
 
-// The Code for this solution was found at https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+// This code was found at https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
 
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
