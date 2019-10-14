@@ -27,8 +27,6 @@ function makeGraphs(error, spotifyData) {
 
 }
 
-//const spotifyData = d3.csvParse(d3.select('pre#data').text());
-
 //                          FUNCTION TO GET TOTAL SONGS
 
 // Inspiration for this code was found at https://stackoverflow.com/questions/43126076/dc-js-numberdisplay-with-crossfilter-get-total-records
