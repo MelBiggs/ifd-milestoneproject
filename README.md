@@ -158,12 +158,12 @@ I validated my CSS code using [W3C CSS Validation Service](https://jigsaw.w3.org
 I validated my CSS code using [W3C Markup Validation Service]( https://validator.w3.org/). This helped me to spot any small mistakes to the code and to clean it up. It warned me that my sections lack a heading but I have decided that it is appropriate to ignore this warning. 
 
 #### JavaScript
-The JavaScript code in my project was validated using  [JSHint]( https://jshint.com/). This was really useful in identifying any extra semicolons that I may have missed and for cleaning my code. 
+The JavaScript code in my project was validated using [JSHint]( https://jshint.com/). This was really useful in identifying any extra semicolons that I may have missed and for cleaning my code. 
 
 ### Jasmine
 When researching whether to test my code with Jasmine, I was told that it was not necessary as it is from the DC.js library. However I have three helper functions, `<millisToMinutesAndSeconds>`, `<transformKey>` and `<transformMode>`. I could use Jasmine to test these functions. 
 
-I created tests for these which can be seen in `<graphSpec.js>` and run by previewing `<tests.html>`. 
+I created tests for these which can be seen in `<graphSpec.js>` and run by previewing `<tests.html>` or on [Github](https://melbiggs.github.io/ifd-milestoneproject/tests.html). 
 
 ### Responsiveness
 I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
