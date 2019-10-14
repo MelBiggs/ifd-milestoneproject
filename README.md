@@ -163,6 +163,8 @@ The JavaScript code in my project was validated using  [JSHint]( https://jshint.
 ### Jasmine
 When researching whether to test my code with Jasmine, I was told that it was not necessary as it is from the DC.js library. However I have three helper functions, `<millisToMinutesAndSeconds>`, `<transformKey>` and `<transformMode>`. I could use Jasmine to test these functions. 
 
+I created tests for these which can be seen in `<graphSpec.js>` and run by previewing `<tests.html>`. 
+
 ### Responsiveness
 I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
 
