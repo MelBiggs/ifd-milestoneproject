@@ -42,12 +42,12 @@ function totalSongs(ndx) {
 
 //                          FUNCTION TO GET TOTAL ARTISTS
 
-// The code for this function was figured out from a question I asked on Stack Overflow: https://stackoverflow.com/questions/58321985/how-to-get-dynamic-field-count-in-dc-js-numberdisplay/58343323#58343323
+// I received help for this from a question I asked on Stack Overflow: https://stackoverflow.com/questions/58321985/how-to-get-dynamic-field-count-in-dc-js-numberdisplay/58343323#58343323
 
 function unique_count_groupall(group) {
     return {
         value: function() {
-            return group.all().length;
+            return group.all().filter(kv => kv.value).length;
         }
     };
 }
@@ -60,7 +60,7 @@ function totalArtists(ndx) {
     var uniqueArtist = unique_count_groupall(dim.group());
     totalArtistsND.group(uniqueArtist).valueAccessor(x => x);
 
-    totalArtistsND.render();
+    totalArtistsND.formatNumber(d3.format('s')).render();
 }
 
 //                          FUNCTION TO GET AVERAGE SONG LENGTH
@@ -430,7 +430,7 @@ function topArtists(ndx) {
             .text(displayText);
     }
     AddXAxis(chart, "Number of Times in the Top 100");
-};
+}
 
 //                          BAR CHART - TOP GENRES
 
