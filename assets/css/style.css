@@ -97,7 +97,7 @@ div.dc-chart {
 /* --------------------------------------------------------------------NAV BAR*/
 
 .navbar-brand {
-    font-size: 1.5em!important;
+    font-size: 2em!important;
 }
 
 /* ------------------------------------------------------------------TOP CARDS*/
@@ -155,6 +155,10 @@ div.dc-chart {
 
 .valence-chart {
     font-size: 20px;
+}
+
+.footer-danceability {
+    padding-top: 8px;
 }
 
 /* ---------------------------------------------------------------COMMENT CARD*/
@@ -293,7 +297,7 @@ footer {
 /* -------------------------------------------------------------RESPONSIVENESS*/
 
 #energy_to_danceability_to_valence {
-    height: 70%;
+    height: 100%;
     width: 50%;
 }
 
@@ -326,6 +330,10 @@ footer {
     #danceability {
         width: 100%;
     }
+    #energy_to_danceability_to_valence {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 /* ---------------------------------------------------------STYLING FOR TABLET*/
@@ -353,5 +361,9 @@ footer {
     #energy,
     #danceability {
         width: 50%;
+    }
+    #energy_to_danceability_to_valence {
+        height: 100%;
+        width: 100%;
     }
 }
