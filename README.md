@@ -169,7 +169,7 @@ I created tests for these which can be seen in `<graphSpec.js>` and run by previ
 I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
 
 ### Peer Code Review
-I published my project on the Code Institute's 'Peer Code Review' channel and received positive feedback. This channel allows other students to have a look at your code and offer suggestions and comments to improve your project. 
+I published my project on the Code Institute's 'Peer Code Review' channel. This channel allows other students to have a look at your code and offer suggestions and comments to improve your project. There wasn't a lot of traffic on the channel so I messaged a team lead for Interactive Frontend Development, **Derek Olson**, and he recommended centering my navbar title and moving my comments and explanations up closer to my charts. I took his advice. Instead of having one large card where I explained the terms, I explained them under each of their relevant charts. 
 
 ## Deployment
 
