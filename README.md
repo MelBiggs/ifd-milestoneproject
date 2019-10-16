@@ -5,11 +5,11 @@
 # Code Institute Milestone Project 
 ## Spotify’s Top 100 Tracks of 2018 Dashboard
 
-The objective of this project is to create an interactive data dashboard to visualise the dataset I have chosen – the Top 100 Songs on Spotify in 2018. This dataset was published on [Kaggle]( https://www.kaggle.com/janicejung/spotify-top-100-of-2018-with-genres). The target audience are individuals who are interested in the features that exist in a popular song or musicians who want to know what it might take to make their songs more likely to be streamed. Ask yourself: what do these songs have in common and why do people like them? 
+The objective of this project was to create an interactive data dashboard to visualise the dataset I have chosen – the Top 100 Songs on Spotify in 2018. This dataset was published on [Kaggle]( https://www.kaggle.com/janicejung/spotify-top-100-of-2018-with-genres). The target audience are individuals who are interested in the features that exist in a popular song or musicians who want to know what it might take to make their songs more likely to be streamed. Ask yourself: what do these songs have in common and why do people like them? 
 
 This project consists of a single-scrolling dashboard with sections that will show some totals and averages of the dataset, the affect the music has on a listener, the popularity of particular keys, modes and artists, and what the most popular genres were, along with some interesting facts about Spotify. 
 
-The first section shows the user cards containing total songs and artists are in the dataset along with the average song length. There is an option to filter by artist, which when selected will present the dynamicity of the cards above and below. 
+The first section shows the user cards containing the total songs and artists that are in the dataset along with the average song length. There is an option to filter by artist, which when selected will present the dynamicity of the cards above and below. 
 
 It leads on to the second section which contain line charts showing the rise of energy and danceability in most of the songs and then shows how valence is positively correlated with danceability and energy. 
 
@@ -17,7 +17,7 @@ After some comments, there are two interesting pie charts detailing the most com
 
 It is followed then by two charts, one row chart and the other a bar chart. The first details the Top 18 Artists of 2018 and the second shows what the Top Genres of 2018 were. Below here there is an option to reset all the data back to the original layout. 
 
-To end the dashboard there are some static fact cards and a footer. The fact cards contain information about Spotify while the footer displays where the user can access the data used or to have a listen of some of these tracks themselves. 
+To complete the dashboard there are some static fact cards and a footer. The fact cards contain information about Spotify while the footer displays where the user can access the dataset or have a listen of some of the tracks themselves. 
 
 
 ## UX
@@ -32,9 +32,9 @@ With this dashboard, the target audience consists of all age groups who have an 
 
 ### User Stories
 
-* As an individual interested in popular music, I would want to be able to use this dashboard to see what the most popular artists and tracks were of 2018 and the individual audio features that is shared among these. I would like to be able to see how different songs I may know score in terms of energy, danceability, valence, key, mode and genre. 
+* As an individual interested in popular music, I would want to be able to use this dashboard to see what the most popular artists and tracks were of 2018 and the individual audio features that is shared among these. I would like to be able to see how different songs score in terms of energy, danceability, valence, key, mode and genre. 
 
-* As a user who wishes to know what makes up a Top 100 song, such as a music technician, I would like to be able to see the breakdown of audio features, and how some of these interact. I want to see the similarities and differences of the features of the entire Top 100. Filtering down to one song, I want to be able to be able to see specifically want the make up of that song is. 
+* As a user who wishes to know what makes up a Top 100 song, perhaps a music technician, I would like to be able to see the breakdown of audio features, and how some of these interact. I want to see the similarities and differences of the features of the entire Top 100. Filtering down to one song, I want to be able to be able to see specifically what the make up of that song is. 
 
 * As a musician or producer who wishes to release music that has a better chance of generating attention, I would like to be able to see what kind of formula popularly streamed music may have. Is the music generally in a major chord? What key do people seem to prefer? Should it be a dance song?
 
@@ -71,7 +71,7 @@ My dashboard consists of the following features:
 
 * **Bar Chart**: The top 6 genres of the year are displayed with a bar chart. Clicking on one of these affects the other charts. 
 
-* **Reset Button**: This feature that enables users to reset all their selection.
+* **Reset Button**: This feature that enables users to reset their selection.
 
 * **Fact Cards with Links**: Three cards with interesting facts about Spotify are listed at the end of the page. The icons contain links to the sources of these facts. 
 
@@ -169,7 +169,7 @@ I created tests for these which can be seen in `<graphSpec.js>` and run by previ
 I tested the responsiveness of the webpage on browsers such as Chrome, Microsoft Edge and Safari and on multiple mobile devices. The page is fully responsive and I am satisfied that it works well on all devices.
 
 ### Peer Code Review
-XXXXXXXXXXXXXXXXXXXXXXXXX
+I published my project on the Code Institute's 'Peer Code Review' channel and received positive feedback. This channel allows other students to have a look at your code and offer suggestions and comments to improve your project. 
 
 ## Deployment
 
