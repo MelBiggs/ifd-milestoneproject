@@ -92,7 +92,6 @@ function averageSongLength(ndx) {
     }).formatNumber(d3.format(".2"));
 
     averageCount.formatNumber(d3.format('')).render();
-    //averageCount.(d3.time.format('%M:%SZ"')).render();
 }
 
 //                          FUNCTION TO CHANGE MILLISECONDS TO MINUTES & SECONDS
@@ -195,7 +194,6 @@ function showDanceability(ndx) {
                 .attr("width", "100%")
                 .attr("viewBox", "0 0 300 300");
         });
-
     chart.render();
 }
 
@@ -338,7 +336,6 @@ function transformKey(key) {
             keyString = "B";
             break;
     }
-
     return keyString;
 }
 

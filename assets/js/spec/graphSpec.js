@@ -21,6 +21,7 @@ describe("Spotify Data", function() {
             expect(transformKey(11)).toBe("B");
         });
     });
+
     describe("transformMode", function() {
         it("converts number scale for mode to Minor and Major", function() {
             expect(transformMode(0)).toBe("Minor");
