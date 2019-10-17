@@ -157,24 +157,10 @@ div.dc-chart {
     font-size: 20px;
 }
 
-.footer-danceability {
-    padding-top: 8px;
-}
-
 /* ---------------------------------------------------------------COMMENT CARD*/
 
-.comment-card-line {
-    margin-bottom: 1em;
-}
-
-.spotify-icon {
-    padding-top: 5px;
-    color: #1DB954;
-}
-
-.card-subtitle {
-    text-align: left;
-    padding-top: 2em;
+.comment-body {
+    font-size: .9em;
 }
 
 /* ----------------------------------------------------------------PIE CHARTS*/
@@ -330,6 +316,9 @@ footer {
     #danceability {
         width: 100%;
     }
+    .comment-body {
+        font-size: .6em;
+    }
     #energy_to_danceability_to_valence {
         height: 100%;
         width: 100%;
@@ -364,6 +353,6 @@ footer {
     }
     #energy_to_danceability_to_valence {
         height: 100%;
-        width: 100%;
+        width: 80%;
     }
 }
