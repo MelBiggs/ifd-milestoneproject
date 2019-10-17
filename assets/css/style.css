@@ -235,6 +235,10 @@ footer {
     color: #03BBEC;
 }
 
+.spotify-icon {
+    color: #1DB954;
+}
+
 .footer-spotify {
     text-align: center;
     padding-top: .2em;
