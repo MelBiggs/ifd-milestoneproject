@@ -317,7 +317,7 @@ footer {
         width: 100%;
     }
     .comment-body {
-        font-size: .6em!important;
+        font-size: .6em;
     }
     #energy_to_danceability_to_valence {
         height: 100%;
